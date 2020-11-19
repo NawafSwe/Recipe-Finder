@@ -6,22 +6,28 @@
 //
 
 import SwiftUI
-
 struct InputSearchView: View {
-    @State var ingredientInput:String = ""
-    @Binding var dismissView: Bool
-    
+    @ObservedObject var viewModel: SearchRecipeViewModel
     var body: some View {
         VStack {
             Text("Tell Me What You have 🤥")
                 .font(.title2)
                 .padding()
-            TextField( "Ingredient Goes Here", text: $ingredientInput)
+            TextField( "Ingredient Goes Here", text: $viewModel.ingredientInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width:300)
             Button{
-                /// add the ingredient to the list
                 
+                DispatchQueue.main.async {
+                    /// add the ingredient to the list
+                    viewModel.ingredients.append(Ingredient(name: viewModel.ingredientInput))
+                    
+                    /// clear text
+                    viewModel.ingredientInput = ""
+                    
+                    /// after adding a new ingredient dismiss from the view
+                    viewModel.isShowForm = false
+                }
             }label:{
                 Text("Add")
                     .frame(width: 220, height: 50, alignment: .center)
@@ -37,19 +43,21 @@ struct InputSearchView: View {
         .shadow(radius: 12)
         .overlay(
             Button{
-                dismissView.toggle()
+                //to dismiss form
+                DispatchQueue.main.async {
+                    viewModel.isShowForm = false
+                }
             }label:{
-            DismissXmarkView()
-                .padding(.horizontal,5)
-                .padding(.vertical,3)
+                DismissXmarkView()
+                    .padding(.horizontal,5)
+                    .padding(.vertical,3)
                 
             }
-                  , alignment: .topTrailing)
+            , alignment: .topTrailing)
     }
 }
-
 struct InputSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        InputSearchView(dismissView: .constant(false))
+        InputSearchView(viewModel: SearchRecipeViewModel())
     }
 }
