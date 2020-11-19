@@ -32,6 +32,7 @@ struct HomeTabBarView: View {
             
         }
         .tabViewStyle(DefaultTabViewStyle())
+        .accentColor(.tabItemColor)
     }
 }
 
