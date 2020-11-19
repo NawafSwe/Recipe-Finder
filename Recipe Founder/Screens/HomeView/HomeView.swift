@@ -9,26 +9,31 @@ import SwiftUI
 
 //MARK:- Home View
 struct HomeView: View {
+    @State var showSearchView = false
     var body: some View {
-        NavigationView{
-            VStack{
-                CardView()
-                Spacer()
-            }.padding(.vertical,70)
-            .navigationBarTitle("Home ☘️")
-            
+        ZStack {
+            NavigationView{
+                VStack{
+                    CardView()
+                        .onTapGesture {
+                            self.showSearchView.toggle()
+                        }
+                    Spacer()
+                }.padding(.vertical,70)
+                .navigationBarTitle("Home ☘️")
+                
+            }
+        .sheet(isPresented: $showSearchView){
+            SearchRecipeView(dismissView: $showSearchView)
         }
-        
+        }
     }
 }
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        
         HomeView()
     }
 }
-
 
 //MARK:- Title Text View
 struct TitleTextView : View {

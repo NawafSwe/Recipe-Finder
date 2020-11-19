@@ -11,6 +11,11 @@
 		3923777925664367004B3819 /* HomeTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3923777825664367004B3819 /* HomeTabBarView.swift */; };
 		3923777B25664368004B3819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3923777A25664368004B3819 /* Assets.xcassets */; };
 		3923777E25664368004B3819 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3923777D25664368004B3819 /* Preview Assets.xcassets */; };
+		39460C332566DA360085B121 /* SearchRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C322566DA360085B121 /* SearchRecipeView.swift */; };
+		39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C372566DF000085B121 /* DismissXmarkView.swift */; };
+		39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C3B2566DF190085B121 /* MagnifyButton.swift */; };
+		39460C3F2566DF380085B121 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C3E2566DF380085B121 /* PlusButton.swift */; };
+		39460C422566E0660085B121 /* InputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C412566E0660085B121 /* InputSearchView.swift */; };
 		397A59A42566C9D400A8FE1E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59A32566C9D400A8FE1E /* HomeView.swift */; };
 		397A59A82566CA7E00A8FE1E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59A72566CA7E00A8FE1E /* SettingView.swift */; };
 		397A59AB2566CACF00A8FE1E /* SavedRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59AA2566CACF00A8FE1E /* SavedRecipeView.swift */; };
@@ -24,6 +29,11 @@
 		3923777A25664368004B3819 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3923777D25664368004B3819 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3923777F25664368004B3819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39460C322566DA360085B121 /* SearchRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeView.swift; sourceTree = "<group>"; };
+		39460C372566DF000085B121 /* DismissXmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissXmarkView.swift; sourceTree = "<group>"; };
+		39460C3B2566DF190085B121 /* MagnifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyButton.swift; sourceTree = "<group>"; };
+		39460C3E2566DF380085B121 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
+		39460C412566E0660085B121 /* InputSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSearchView.swift; sourceTree = "<group>"; };
 		397A59A32566C9D400A8FE1E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		397A59A72566CA7E00A8FE1E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		397A59AA2566CACF00A8FE1E /* SavedRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeView.swift; sourceTree = "<group>"; };
@@ -79,6 +89,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		39460C312566DA200085B121 /* SearchRecipeView */ = {
+			isa = PBXGroup;
+			children = (
+				39460C322566DA360085B121 /* SearchRecipeView.swift */,
+				39460C412566E0660085B121 /* InputSearchView.swift */,
+			);
+			path = SearchRecipeView;
+			sourceTree = "<group>";
+		};
+		39460C362566DEEA0085B121 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				39460C372566DF000085B121 /* DismissXmarkView.swift */,
+				39460C3B2566DF190085B121 /* MagnifyButton.swift */,
+				39460C3E2566DF380085B121 /* PlusButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		397A59B22566D63300A8FE1E /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3923777825664367004B3819 /* HomeTabBarView.swift */,
+				39460C312566DA200085B121 /* SearchRecipeView */,
 				397A59B72566D69300A8FE1E /* HomeView */,
 				397A59B62566D68100A8FE1E /* SettingView */,
 				397A59B52566D66C00A8FE1E /* SavedRecipesView */,
@@ -133,6 +163,7 @@
 		397A59B82566D6A700A8FE1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39460C362566DEEA0085B121 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,11 +237,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39460C422566E0660085B121 /* InputSearchView.swift in Sources */,
 				397A59A42566C9D400A8FE1E /* HomeView.swift in Sources */,
 				397A59A82566CA7E00A8FE1E /* SettingView.swift in Sources */,
+				39460C332566DA360085B121 /* SearchRecipeView.swift in Sources */,
+				39460C3F2566DF380085B121 /* PlusButton.swift in Sources */,
+				39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */,
 				397A59AB2566CACF00A8FE1E /* SavedRecipeView.swift in Sources */,
 				3923777925664367004B3819 /* HomeTabBarView.swift in Sources */,
 				3923777725664367004B3819 /* Recipe_FounderApp.swift in Sources */,
+				39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */,
 				397A59B02566D56C00A8FE1E /* Color+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
