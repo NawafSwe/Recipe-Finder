@@ -60,15 +60,13 @@
 		3923777525664367004B3819 /* Recipe Founder */ = {
 			isa = PBXGroup;
 			children = (
+				397A59B22566D63300A8FE1E /* Utilites */,
+				397A59B82566D6A700A8FE1E /* Views */,
+				397A59B42566D65000A8FE1E /* Screens */,
 				3923777625664367004B3819 /* Recipe_FounderApp.swift */,
-				397A59AA2566CACF00A8FE1E /* SavedRecipeView.swift */,
-				397A59A72566CA7E00A8FE1E /* SettingView.swift */,
-				397A59A32566C9D400A8FE1E /* HomeView.swift */,
-				3923777825664367004B3819 /* HomeTabBarView.swift */,
 				3923777A25664368004B3819 /* Assets.xcassets */,
 				3923777F25664368004B3819 /* Info.plist */,
 				3923777C25664368004B3819 /* Preview Content */,
-				397A59AF2566D56C00A8FE1E /* Color+Ext.swift */,
 			);
 			path = "Recipe Founder";
 			sourceTree = "<group>";
@@ -79,6 +77,64 @@
 				3923777D25664368004B3819 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		397A59B22566D63300A8FE1E /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				397A59B32566D64000A8FE1E /* Extensions */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		397A59B32566D64000A8FE1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				397A59AF2566D56C00A8FE1E /* Color+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		397A59B42566D65000A8FE1E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3923777825664367004B3819 /* HomeTabBarView.swift */,
+				397A59B72566D69300A8FE1E /* HomeView */,
+				397A59B62566D68100A8FE1E /* SettingView */,
+				397A59B52566D66C00A8FE1E /* SavedRecipesView */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		397A59B52566D66C00A8FE1E /* SavedRecipesView */ = {
+			isa = PBXGroup;
+			children = (
+				397A59AA2566CACF00A8FE1E /* SavedRecipeView.swift */,
+			);
+			path = SavedRecipesView;
+			sourceTree = "<group>";
+		};
+		397A59B62566D68100A8FE1E /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				397A59A72566CA7E00A8FE1E /* SettingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		397A59B72566D69300A8FE1E /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				397A59A32566C9D400A8FE1E /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		397A59B82566D6A700A8FE1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

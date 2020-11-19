@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK:- Home View
 struct HomeView: View {
     var body: some View {
         NavigationView{
@@ -47,7 +48,7 @@ struct TitleTextView : View {
     }
 }
 
-
+//MARK:- Card View
 struct CardView: View {
     var body: some View {
         VStack{
