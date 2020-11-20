@@ -8,10 +8,10 @@
 import Foundation
 //MARK:- RecipeModel:Codable
 struct RecipeModel : Codable {
-    var id:Int
+    var id: Int
     var title:String
     var image:String?
-    var likes:Int
+    var likes:Int?
     var vegetarian:Bool?
     var vegan:Bool?
     var glutenFree:Bool?

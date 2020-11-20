@@ -29,14 +29,15 @@ final class RecipeServices {
         /// encoder to encode data
         do{
             /// JSONSerialization for body
-            let body : [String:Any] = ["ingredients":ingredients , "number":"50"]
-            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+            let body  = ["ingredients":ingredients,"number": 50] as [String : Any]
+            request.httpBody = try JSONSerialization.data(withJSONObject: body,options: [.prettyPrinted])
+            
         }catch _ {
             completion(.failure(.unComplete))
             return
         }
         ///setting new task to start a http request
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             /// checking for errors
             if let _ = error {
                 completion(.failure(.unComplete))
@@ -44,6 +45,7 @@ final class RecipeServices {
             }
             /// checking response
             guard let response = response as? HTTPURLResponse , response.statusCode == 200 else {
+                
                 completion(.failure(.invalidResponse))
                 return
             }
@@ -61,7 +63,8 @@ final class RecipeServices {
                 /// returning recipes
                 completion(.success(recipes))
                 return
-            }catch _ {
+            }catch let error{
+                print("cannot parse \n \(error)")
                 completion(.failure(.invalidData))
                 return
             }

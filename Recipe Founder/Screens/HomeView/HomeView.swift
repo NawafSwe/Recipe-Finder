@@ -26,6 +26,15 @@ struct HomeView: View {
         .sheet(isPresented: $showSearchView){
             SearchRecipeView(dismissView: $showSearchView)
         }
+        }.onAppear{
+            RecipeServices.sheared.fetchRecipes(ingredients: ["meat"]) { result in
+                switch result{
+                    case .success(let recipes):
+                        print(recipes)
+                    case .failure(let err):
+                        print(err)
+                }
+            }
         }
     }
 }
