@@ -16,6 +16,9 @@
 		39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C3B2566DF190085B121 /* MagnifyButton.swift */; };
 		39460C3F2566DF380085B121 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C3E2566DF380085B121 /* PlusButton.swift */; };
 		39460C422566E0660085B121 /* InputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C412566E0660085B121 /* InputSearchView.swift */; };
+		3967889A256868F20025ADE5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39678899256868F20025ADE5 /* Alert.swift */; };
+		396788A0256869180025ADE5 /* NetworkErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967889F256869180025ADE5 /* NetworkErr.swift */; };
+		396788A425686CBE0025ADE5 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396788A325686CBE0025ADE5 /* Array+Ext.swift */; };
 		397A59A42566C9D400A8FE1E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59A32566C9D400A8FE1E /* HomeView.swift */; };
 		397A59A82566CA7E00A8FE1E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59A72566CA7E00A8FE1E /* SettingView.swift */; };
 		397A59AB2566CACF00A8FE1E /* SavedRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59AA2566CACF00A8FE1E /* SavedRecipeView.swift */; };
@@ -40,6 +43,9 @@
 		39460C3B2566DF190085B121 /* MagnifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyButton.swift; sourceTree = "<group>"; };
 		39460C3E2566DF380085B121 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		39460C412566E0660085B121 /* InputSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSearchView.swift; sourceTree = "<group>"; };
+		39678899256868F20025ADE5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		3967889F256869180025ADE5 /* NetworkErr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErr.swift; sourceTree = "<group>"; };
+		396788A325686CBE0025ADE5 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		397A59A32566C9D400A8FE1E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		397A59A72566CA7E00A8FE1E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		397A59AA2566CACF00A8FE1E /* SavedRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeView.swift; sourceTree = "<group>"; };
@@ -123,9 +129,27 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		39678898256868DE0025ADE5 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				39678899256868F20025ADE5 /* Alert.swift */,
+				3967889D256868F60025ADE5 /* NetworkAlerts */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		3967889D256868F60025ADE5 /* NetworkAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				3967889F256869180025ADE5 /* NetworkErr.swift */,
+			);
+			path = NetworkAlerts;
+			sourceTree = "<group>";
+		};
 		397A59B22566D63300A8FE1E /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				39678898256868DE0025ADE5 /* Alerts */,
 				39C9E614256834C6005C824E /* Managers */,
 				397A59B32566D64000A8FE1E /* Extensions */,
 			);
@@ -136,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				397A59AF2566D56C00A8FE1E /* Color+Ext.swift */,
+				396788A325686CBE0025ADE5 /* Array+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3967889A256868F20025ADE5 /* Alert.swift in Sources */,
 				39460C422566E0660085B121 /* InputSearchView.swift in Sources */,
 				39C9E61E25683A25005C824E /* RecipeModel.swift in Sources */,
 				397A59A42566C9D400A8FE1E /* HomeView.swift in Sources */,
@@ -286,6 +312,7 @@
 				39460C332566DA360085B121 /* SearchRecipeView.swift in Sources */,
 				39B40C07256717F2003973C9 /* IngredientInput.swift in Sources */,
 				39C12C33256739030028717D /* RecipeResultsView.swift in Sources */,
+				396788A0256869180025ADE5 /* NetworkErr.swift in Sources */,
 				39C9E617256834FC005C824E /* RecipeCellView.swift in Sources */,
 				39B40C0C25671A25003973C9 /* SearchRecipeViewModel.swift in Sources */,
 				39460C3F2566DF380085B121 /* PlusButton.swift in Sources */,
@@ -294,6 +321,7 @@
 				3923777925664367004B3819 /* HomeTabBarView.swift in Sources */,
 				3923777725664367004B3819 /* Recipe_FounderApp.swift in Sources */,
 				39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */,
+				396788A425686CBE0025ADE5 /* Array+Ext.swift in Sources */,
 				397A59B02566D56C00A8FE1E /* Color+Ext.swift in Sources */,
 				39C9E61B25683530005C824E /* RecipesServices.swift in Sources */,
 			);
