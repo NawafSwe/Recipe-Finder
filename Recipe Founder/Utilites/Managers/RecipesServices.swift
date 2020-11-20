@@ -15,6 +15,7 @@ final class RecipeServices {
     
     private init(){}
     
+    /// fetching recipes from server
     func fetchRecipes(ingredients : [String] , completion: @escaping (Result<[RecipeModel],NetworkErr>) ->Void ){
         /// setting the url
         guard let url = URL(string: fullURL ) else{
