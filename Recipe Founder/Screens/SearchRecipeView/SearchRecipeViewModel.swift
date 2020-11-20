@@ -9,6 +9,6 @@ import SwiftUI
 
 final class SearchRecipeViewModel: ObservableObject{
     @Published var isShowForm = false
-    @Published var ingredients : [Ingredient] = []
+    @Published var ingredients : [IngredientInput] = []
     @Published var ingredientInput:String = ""
     }
