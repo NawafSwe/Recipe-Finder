@@ -10,7 +10,7 @@ import Foundation
 final class RecipeServices {
     static let sheared = RecipeServices()
     static let baseURL = "https://spoon-groc.herokuapp.com/"
-    static let endpoint = "spoon/searchByIngredients"
+    static let endpoint = "spoon/recipes"
     
     private init(){}
     
