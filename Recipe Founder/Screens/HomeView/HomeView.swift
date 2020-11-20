@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 //MARK:- Home View
 struct HomeView: View {
     @State var showSearchView = false
@@ -19,7 +18,8 @@ struct HomeView: View {
                             self.showSearchView.toggle()
                         }
                     Spacer()
-                }.padding(.vertical,70)
+                }
+                .padding(.vertical,50)
                 .navigationBarTitle("Home ☘️")
                 
             }
@@ -29,6 +29,7 @@ struct HomeView: View {
         }
     }
 }
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
@@ -60,7 +61,7 @@ struct CardView: View {
             Image("galshir-paper-boat")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 320, height: 300, alignment: .center)
+                .frame(width: 340, height: 290, alignment: .center)
                 .cornerRadius(40)
         }
         .overlay(TitleTextView(),alignment: .center)

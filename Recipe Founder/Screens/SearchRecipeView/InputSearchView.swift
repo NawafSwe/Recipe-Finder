@@ -10,7 +10,7 @@ struct InputSearchView: View {
     @ObservedObject var viewModel: SearchRecipeViewModel
     var body: some View {
         VStack {
-            Text("Tell Me What You have 🤥")
+            Text("Tell Me What You Have 🥰")
                 .font(.title2)
                 .padding()
             TextField( "Ingredient Goes Here", text: $viewModel.ingredientInput)
@@ -30,7 +30,7 @@ struct InputSearchView: View {
                 }
             }label:{
                 Text("Add")
-                    .frame(width: 220, height: 50, alignment: .center)
+                    .frame(width: 190, height: 50, alignment: .center)
                     .accentColor(.white)
                     .background(Color.tabItemColor)
                     .cornerRadius(30)

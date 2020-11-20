@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-
 struct SearchRecipeView: View {
     @Binding var dismissView : Bool
     @StateObject private var viewModel = SearchRecipeViewModel()
-    
+    @State var showResults  = false
     
     var body: some View {
         ZStack {
@@ -22,7 +21,7 @@ struct SearchRecipeView: View {
                 /// disable list if the user filling new ingredient
                 .disabled(viewModel.isShowForm)
                 .navigationBarTitle("Search Recipes ☘️")
-                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel)
+                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $showResults)
                                     ,trailing:
                                         Button(action:{ self.dismissView.toggle()})
                                             {DismissXmarkView()}
@@ -33,14 +32,18 @@ struct SearchRecipeView: View {
             .blur(radius: viewModel.isShowForm ? 5 : 0 )
             .shadow(radius:  viewModel.isShowForm ? 10 : 0)
             
+            .sheet(isPresented: $showResults){
+                RecipeResultsView()
+            }
+    
             if viewModel.isShowForm{
                 InputSearchView(viewModel: viewModel)
-                    .transition(.identity)
+                    .transition(.move(edge: .top))
+                    .animation(.easeOut(duration: 0.4))
             }
         }
     }
 }
-
 struct SearchRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         SearchRecipeView(dismissView:.constant(false))
@@ -48,13 +51,16 @@ struct SearchRecipeView_Previews: PreviewProvider {
     }
 }
 
+
 //MARK:- horizontalButtonContainers
 struct horizontalButtonContainers: View{
     @ObservedObject var viewModel:SearchRecipeViewModel
+    @Binding var showResult: Bool
     var body: some View{
         HStack{
             Button(action:{
                 /// do search
+                showResult.toggle()
             }){ MagnifyButton()}
             Button(action:{
                 /// show form

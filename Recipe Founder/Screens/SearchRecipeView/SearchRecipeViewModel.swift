@@ -11,6 +11,4 @@ final class SearchRecipeViewModel: ObservableObject{
     @Published var isShowForm = false
     @Published var ingredients : [Ingredient] = []
     @Published var ingredientInput:String = ""
-    
-
-}
+    }

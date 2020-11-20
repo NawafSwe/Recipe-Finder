@@ -22,6 +22,7 @@
 		397A59B02566D56C00A8FE1E /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A59AF2566D56C00A8FE1E /* Color+Ext.swift */; };
 		39B40C07256717F2003973C9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B40C06256717F2003973C9 /* Ingredient.swift */; };
 		39B40C0C25671A25003973C9 /* SearchRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B40C0B25671A25003973C9 /* SearchRecipeViewModel.swift */; };
+		39C12C33256739030028717D /* RecipeResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C12C32256739030028717D /* RecipeResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		397A59AF2566D56C00A8FE1E /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		39B40C06256717F2003973C9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		39B40C0B25671A25003973C9 /* SearchRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewModel.swift; sourceTree = "<group>"; };
+		39C12C32256739030028717D /* RecipeResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +99,10 @@
 		39460C312566DA200085B121 /* SearchRecipeView */ = {
 			isa = PBXGroup;
 			children = (
+				39B40C0B25671A25003973C9 /* SearchRecipeViewModel.swift */,
 				39460C322566DA360085B121 /* SearchRecipeView.swift */,
 				39460C412566E0660085B121 /* InputSearchView.swift */,
-				39B40C0B25671A25003973C9 /* SearchRecipeViewModel.swift */,
+				39C12C32256739030028717D /* RecipeResultsView.swift */,
 			);
 			path = SearchRecipeView;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				397A59A82566CA7E00A8FE1E /* SettingView.swift in Sources */,
 				39460C332566DA360085B121 /* SearchRecipeView.swift in Sources */,
 				39B40C07256717F2003973C9 /* Ingredient.swift in Sources */,
+				39C12C33256739030028717D /* RecipeResultsView.swift in Sources */,
 				39B40C0C25671A25003973C9 /* SearchRecipeViewModel.swift in Sources */,
 				39460C3F2566DF380085B121 /* PlusButton.swift in Sources */,
 				39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */,
