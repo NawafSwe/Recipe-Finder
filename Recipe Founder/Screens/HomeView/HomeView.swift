@@ -23,19 +23,27 @@ struct HomeView: View {
                 .navigationBarTitle("Home ☘️")
                 
             }
-        .sheet(isPresented: $showSearchView){
-            SearchRecipeView(dismissView: $showSearchView)
-        }     }
-// .onAppear{
-//            RecipeServices.sheared.fetchRecipes(ingredients: ["meat"]) { result in
-//                switch result{
-//                    case .success(let recipes):
-//                        print(recipes)
-//                    case .failure(let err):
-//                        print(err)
-//                }
-//            }
-//        }
+            //        .sheet(isPresented: $showSearchView){
+            //            SearchRecipeView(dismissView: $showSearchView)
+            //        }
+            
+            if showSearchView {
+                SearchRecipeView(dismissView: $showSearchView)
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeIn)
+            }
+            
+        }
+        // .onAppear{
+        //            RecipeServices.sheared.fetchRecipes(ingredients: ["meat"]) { result in
+        //                switch result{
+        //                    case .success(let recipes):
+        //                        print(recipes)
+        //                    case .failure(let err):
+        //                        print(err)
+        //                }
+        //            }
+        //        }
     }
 }
 

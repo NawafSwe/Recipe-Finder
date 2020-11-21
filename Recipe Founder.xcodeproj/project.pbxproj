@@ -36,6 +36,7 @@
 		39F91ABE2569B09200D297AA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91ABD2569B09200D297AA /* String+Ext.swift */; };
 		39F91AC22569B21B00D297AA /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91AC12569B21B00D297AA /* RemoteImageView.swift */; };
 		39F91AC72569B69600D297AA /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91AC62569B69600D297AA /* RecipeDetailsView.swift */; };
+		39F91ACC2569BE8900D297AA /* RecipeResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		39F91ABD2569B09200D297AA /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		39F91AC12569B21B00D297AA /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		39F91AC62569B69600D297AA /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
+		39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResultViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,6 @@
 				39B40C0B25671A25003973C9 /* SearchRecipeViewModel.swift */,
 				39460C322566DA360085B121 /* SearchRecipeView.swift */,
 				39460C412566E0660085B121 /* InputSearchView.swift */,
-				39C12C32256739030028717D /* RecipeResultsView.swift */,
 			);
 			path = SearchRecipeView;
 			sourceTree = "<group>";
@@ -209,6 +210,7 @@
 		397A59B42566D65000A8FE1E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				39F91ACA2569BE5F00D297AA /* RecipeResultView */,
 				3923777825664367004B3819 /* HomeTabBarView.swift */,
 				3947802B25688AB500676584 /* AccountView */,
 				39460C312566DA200085B121 /* SearchRecipeView */,
@@ -296,6 +298,15 @@
 			path = RecipeDetailsView;
 			sourceTree = "<group>";
 		};
+		39F91ACA2569BE5F00D297AA /* RecipeResultView */ = {
+			isa = PBXGroup;
+			children = (
+				39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */,
+				39C12C32256739030028717D /* RecipeResultsView.swift */,
+			);
+			path = RecipeResultView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,6 +391,7 @@
 				39C9E617256834FC005C824E /* RecipeCellView.swift in Sources */,
 				39F91AC72569B69600D297AA /* RecipeDetailsView.swift in Sources */,
 				39B40C0C25671A25003973C9 /* SearchRecipeViewModel.swift in Sources */,
+				39F91ACC2569BE8900D297AA /* RecipeResultViewModel.swift in Sources */,
 				394780352568939900676584 /* SafariView.swift in Sources */,
 				39460C3F2566DF380085B121 /* PlusButton.swift in Sources */,
 				39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */,

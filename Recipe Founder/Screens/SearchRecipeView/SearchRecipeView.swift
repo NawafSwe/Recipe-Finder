@@ -27,15 +27,16 @@ struct SearchRecipeView: View {
                                             {DismissXmarkView()}
                 )
                 
-               
+                
             }
             .blur(radius: viewModel.isShowForm ? 5 : 0 )
             .shadow(radius:  viewModel.isShowForm ? 10 : 0)
             
-            .sheet(isPresented: $showResults){
-                RecipeResultsView()
+            if showResults{
+                RecipeResultsView(dissmiss: $showResults)
+                    .transition(.move(edge: .bottom))
             }
-    
+            
             if viewModel.isShowForm{
                 InputSearchView(viewModel: viewModel)
                     .transition(.move(edge: .top))
