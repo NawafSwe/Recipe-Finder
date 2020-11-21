@@ -8,43 +8,49 @@
 import SwiftUI
 
 struct SettingView: View {
+    @State private var showSafari = false
+    @State private var showAccountSetting = false
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header:Text("General Settings")){
-                    NavigationLink(destination:Text("Account view")){
-                        SettingCellView(imageName: "person.crop.circle", title: "Account")
+            NavigationView {
+                Form {
+                    Section(header:Text("General Settings")){
                         
-                    }
-                    
-                    NavigationLink(destination:Text("Contact US")){
-                        SettingCellView(imageName: "message", title: "Contact Developer")
+                        Button{
+                            showAccountSetting.toggle()
+                            
+                        }label:{ SettingCellView(imageName: "person.crop.circle", title: "Account") }
+                        .sheet(isPresented: $showAccountSetting){
+                            AccountView()
+                        }
                         
+                        Button{ showSafari.toggle()
+                        }label:{ SettingCellView(imageName: "message", title: "Contact Developer")
+                        }
+                        .sheet(isPresented: $showSafari){
+                            SafariView(url:URL(string:"https://twitter.com/Nawaf_B_910")!)
+                        }
                     }
-                    
-                    
+                    .accentColor(.black)
+                    Section{
+                        Button{ }label:{
+                            SettingCellView(imageName: "wifi.slash", title: "Logout")
+                        }
+                        .accentColor(.red)
+                    }
                     
                 }
-                Section{
-                    Button{ }label:{
-                        SettingCellView(imageName: "wifi.slash", title: "Logout")
-                    }
-                    .accentColor(.red)
-                }
-                
+                .navigationBarTitle("Setting ✈️")
             }
-            .navigationBarTitle("Setting ✈️")
-        }
+           
         
     }
 }
-
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
     }
 }
-
+//MARK:- SettingCellView
 struct SettingCellView :View{
     let imageName:String
     let title:String

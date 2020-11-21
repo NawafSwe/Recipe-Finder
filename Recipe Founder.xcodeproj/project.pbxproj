@@ -18,6 +18,7 @@
 		39460C422566E0660085B121 /* InputSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C412566E0660085B121 /* InputSearchView.swift */; };
 		3947802D25688AC800676584 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3947802C25688AC800676584 /* AccountViewModel.swift */; };
 		3947803125688AD600676584 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3947803025688AD600676584 /* AccountView.swift */; };
+		394780352568939900676584 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394780342568939900676584 /* SafariView.swift */; };
 		3967889A256868F20025ADE5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39678899256868F20025ADE5 /* Alert.swift */; };
 		396788A0256869180025ADE5 /* NetworkErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967889F256869180025ADE5 /* NetworkErr.swift */; };
 		396788A425686CBE0025ADE5 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396788A325686CBE0025ADE5 /* Array+Ext.swift */; };
@@ -47,6 +48,7 @@
 		39460C412566E0660085B121 /* InputSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSearchView.swift; sourceTree = "<group>"; };
 		3947802C25688AC800676584 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		3947803025688AD600676584 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		394780342568939900676584 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		39678899256868F20025ADE5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3967889F256869180025ADE5 /* NetworkErr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErr.swift; sourceTree = "<group>"; };
 		396788A325686CBE0025ADE5 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			path = AccountView;
 			sourceTree = "<group>";
 		};
+		394780332568938700676584 /* UIKitViews */ = {
+			isa = PBXGroup;
+			children = (
+				394780342568939900676584 /* SafariView.swift */,
+			);
+			path = UIKitViews;
+			sourceTree = "<group>";
+		};
 		39678898256868DE0025ADE5 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		397A59B22566D63300A8FE1E /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				394780332568938700676584 /* UIKitViews */,
 				39678898256868DE0025ADE5 /* Alerts */,
 				39C9E614256834C6005C824E /* Managers */,
 				397A59B32566D64000A8FE1E /* Extensions */,
@@ -331,6 +342,7 @@
 				396788A0256869180025ADE5 /* NetworkErr.swift in Sources */,
 				39C9E617256834FC005C824E /* RecipeCellView.swift in Sources */,
 				39B40C0C25671A25003973C9 /* SearchRecipeViewModel.swift in Sources */,
+				394780352568939900676584 /* SafariView.swift in Sources */,
 				39460C3F2566DF380085B121 /* PlusButton.swift in Sources */,
 				39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */,
 				397A59AB2566CACF00A8FE1E /* SavedRecipeView.swift in Sources */,

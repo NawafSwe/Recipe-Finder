@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct AccountView: View {
     @State private var email = ""
     @State private var firstName = ""
