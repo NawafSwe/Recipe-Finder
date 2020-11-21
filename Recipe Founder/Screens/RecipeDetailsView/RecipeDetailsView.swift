@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeDetailsView: View {
     let recipe:RecipeModel
     @Binding var dismiss:Bool
+    @State private var showSafari = false
     var body: some View {
         VStack{
             RecipeImageView(url: recipe.image ?? "")
@@ -67,6 +68,21 @@ struct RecipeDetailsView: View {
                 }
                 .padding()
             }
+            Button(action:{showSafari.toggle()}){
+                Text("Click For More Details")
+                    .fontWeight(.black)
+                    .accentColor(.white)
+                    .font(.body)
+                    .frame(width: 300,height: 50)
+                    .background(Color.tabItemColor)
+                    
+            }
+            .cornerRadius(20)
+            .padding()
+            .sheet(isPresented: $showSafari) {
+                SafariView(url: URL(string: recipe.sourceUrl ?? "") ??  URL(string:"Not found in case")! )
+            }
+            
             
             Spacer()
         }
