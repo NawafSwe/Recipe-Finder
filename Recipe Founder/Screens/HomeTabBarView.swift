@@ -13,14 +13,16 @@ struct HomeTabBarView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
-                        Text("Home")
+                    Text("Home")
                 }
             
             
             SavedRecipeView()
                 .tabItem {
                     Image(systemName: "leaf")
+                        .renderingMode(.original)
                     Text("Saved Recipes")
+                    
                 }
             
             SettingView()
