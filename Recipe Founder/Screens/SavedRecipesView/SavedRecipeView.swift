@@ -17,6 +17,7 @@ struct SavedRecipeView: View {
                         RecipeCellView(recipe: recipe)
                     }
                 }
+                .listStyle(DefaultListStyle())
                 
                 
                 if recipeList.isEmpty{

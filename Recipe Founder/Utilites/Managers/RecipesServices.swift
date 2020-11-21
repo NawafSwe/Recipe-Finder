@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import UIKit
 /// singleton design
 final class RecipeServices {
     static let sheared = RecipeServices()
     static let baseURL = "https://spoon-groc.herokuapp.com/"
     static let endpoint = "spoon/recipes"
     private let fullURL = baseURL+endpoint
+    
+    /// `caching pictures and getting images from spoon api`
+    /// we are passing the each pair key `<NSString,UIImage>`
+    /// `caching images` we want to cache images to avoid downloading images every time `NSString` is the identifier
+    /// and the `UIImage`  is the value of the image
+    private let cache = NSCache<NSString,UIImage>()
     
     private init(){}
     
@@ -75,4 +82,34 @@ final class RecipeServices {
         task.resume()
         
     }
+    
+    
+    /// getting image  from the server
+    func getImage(url: String , completion: @escaping  (UIImage?) ->Void){
+        
+        /// checking the url is valid url
+        guard let safeUrl = URL(string:url) else {
+            /// no image because the url is not valid
+            completion(nil)
+            return
+        }
+        
+        /// url valid then we will do a network call to get the image from the server
+        
+        let task = URLSession.shared.dataTask(with: safeUrl) { (data, response, error) in
+            /// we do not care here for error or response status because we do not have alerts and such error handling
+            /// if there is an error or problem just place a placeholder image
+            guard let data = data ,let image = UIImage(data: data) else{
+                completion(nil)
+                return
+            }
+            /// return the image
+            completion(image)
+            return
+        }
+        /// starting the network call
+        task.resume()
+    }
+    
 }
+
