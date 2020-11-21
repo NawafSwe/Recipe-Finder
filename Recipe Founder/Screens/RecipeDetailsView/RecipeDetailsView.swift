@@ -11,6 +11,7 @@ struct RecipeDetailsView: View {
     let recipe:RecipeModel
     @Binding var dismiss:Bool
     @State private var showSafari = false
+    
     var body: some View {
         VStack{
             RecipeImageView(url: recipe.image ?? "")
@@ -51,20 +52,11 @@ struct RecipeDetailsView: View {
                 .padding(20)
                 
                 HStack(spacing:32){
-                    VStack{
-                        Text("glutenFree 🫀")
-                        Text( (recipe.glutenFree ?? false) ? "Yes" : "NO"  )
-                    }
+                    RecipeDetailsBooleanView(title: "glutenFree 🫀", value: recipe.glutenFree ?? false)
                     
-                    VStack{
-                        Text("vegan ☘️")
-                        Text( (recipe.vegan ?? false) ? "Yes" : "NO"  )
-                    }
+                    RecipeDetailsBooleanView(title: "vegan ☘️", value: recipe.vegan ?? false)
                     
-                    VStack{
-                        Text("healthy 😇")
-                        Text( (recipe.veryHealthy ?? false) ? "Yes" : "NO"  )
-                    }
+                    RecipeDetailsBooleanView(title: "healthy 😇", value: recipe.veryHealthy ?? false)
                 }
                 .padding()
             }
@@ -75,7 +67,7 @@ struct RecipeDetailsView: View {
                     .font(.body)
                     .frame(width: 300,height: 50)
                     .background(Color.tabItemColor)
-                    
+                
             }
             .cornerRadius(20)
             .padding()
@@ -110,5 +102,16 @@ struct RecipeDetailsView: View {
 struct RecipeDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeDetailsView(recipe: MockData.recipeSample,dismiss: .constant(false))
+    }
+}
+
+struct RecipeDetailsBooleanView:View{
+    let title : String
+    let value: Bool
+    var body: some View{
+        VStack{
+            Text("\(title)")
+            Text(value ? "Yes" : "NO")
+        }
     }
 }
