@@ -8,8 +8,7 @@
 import SwiftUI
 //MARK:- RecipeCellView
 struct RecipeCellView:View{
-    //    let title:String = ""
-    //    let imageUrl:String = ""
+    let recipe:RecipeModel
     
     var body: some View{
         HStack(spacing:10){
@@ -18,15 +17,17 @@ struct RecipeCellView:View{
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100)
                 .cornerRadius(10)
-            Text("Chicken Fresh")
-                .font(.title3)
-                .fontWeight(.medium)
+            Text(recipe.title)
+                .font(.body)
+                .fontWeight(.light)
+                .multilineTextAlignment(.leading)
+                
         }
     }
 }
 
 struct RecipeCellView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCellView()
+        RecipeCellView(recipe: MockData.recipeSample)
     }
 }

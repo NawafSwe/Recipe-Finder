@@ -11,9 +11,9 @@ struct RecipeResultsView: View {
     var body: some View {
         NavigationView{
             List{
-                RecipeCellView()
-                RecipeCellView()
-                RecipeCellView()
+                RecipeCellView(recipe: MockData.recipeSample)
+                RecipeCellView(recipe: MockData.recipeSample)
+                RecipeCellView(recipe: MockData.recipeSample)
             }
             .navigationBarTitle("Recipes Result 🧾☕️")
         }

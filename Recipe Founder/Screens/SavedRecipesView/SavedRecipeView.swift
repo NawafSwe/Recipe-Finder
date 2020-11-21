@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct SavedRecipeView: View {
+    @State private var recipeList = MockData.recipeList
     var body: some View {
         NavigationView {
-            EmptySavedRecipesStateView()
-                .navigationBarTitle("Saved Recipes 🧾")
+            ZStack{
+                List{
+                    ForEach(recipeList){ recipe in
+                        RecipeCellView(recipe: recipe)
+                    }
+                }
+                
+                
+                if recipeList.isEmpty{
+                    EmptySavedRecipesStateView()
+                    
+                }
+                
+            }
+            
+            .navigationBarTitle("Saved Recipes 🧾")
         }
     }
 }
@@ -22,22 +37,3 @@ struct SavedRecipeView_Previews: PreviewProvider {
     }
 }
 
-//MARK:- EmptySavedRecipesStateView
-struct EmptySavedRecipesStateView:View {
-    var body: some View{
-        ZStack{
-            VStack(spacing:10){
-                Image("shooping")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300 , height: 300)
-                Text("You Do Not Have Saved Recipes Currently Go And Pick Some!")
-                    .foregroundColor(.primary)
-                    .multilineTextAlignment(.center)
-                    .font(.subheadline)
-                    .padding()
-            }
-        }
-        .offset(y:-60)
-    }
-}

@@ -19,6 +19,7 @@
 		3947802D25688AC800676584 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3947802C25688AC800676584 /* AccountViewModel.swift */; };
 		3947803125688AD600676584 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3947803025688AD600676584 /* AccountView.swift */; };
 		394780352568939900676584 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394780342568939900676584 /* SafariView.swift */; };
+		3947803A2568A68800676584 /* EmptySavedRecipesStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394780392568A68800676584 /* EmptySavedRecipesStateView.swift */; };
 		3967889A256868F20025ADE5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39678899256868F20025ADE5 /* Alert.swift */; };
 		396788A0256869180025ADE5 /* NetworkErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967889F256869180025ADE5 /* NetworkErr.swift */; };
 		396788A425686CBE0025ADE5 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396788A325686CBE0025ADE5 /* Array+Ext.swift */; };
@@ -49,6 +50,7 @@
 		3947802C25688AC800676584 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		3947803025688AD600676584 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		394780342568939900676584 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		394780392568A68800676584 /* EmptySavedRecipesStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySavedRecipesStateView.swift; sourceTree = "<group>"; };
 		39678899256868F20025ADE5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3967889F256869180025ADE5 /* NetworkErr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErr.swift; sourceTree = "<group>"; };
 		396788A325686CBE0025ADE5 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			path = UIKitViews;
 			sourceTree = "<group>";
 		};
+		394780382568A66700676584 /* Empty States View */ = {
+			isa = PBXGroup;
+			children = (
+				394780392568A68800676584 /* EmptySavedRecipesStateView.swift */,
+			);
+			path = "Empty States View";
+			sourceTree = "<group>";
+		};
 		39678898256868DE0025ADE5 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +239,7 @@
 		397A59B82566D6A700A8FE1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				394780382568A66700676584 /* Empty States View */,
 				39C9E615256834F1005C824E /* Cells */,
 				39460C362566DEEA0085B121 /* Buttons */,
 			);
@@ -329,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3947803A2568A68800676584 /* EmptySavedRecipesStateView.swift in Sources */,
 				3967889A256868F20025ADE5 /* Alert.swift in Sources */,
 				3947802D25688AC800676584 /* AccountViewModel.swift in Sources */,
 				39460C422566E0660085B121 /* InputSearchView.swift in Sources */,
