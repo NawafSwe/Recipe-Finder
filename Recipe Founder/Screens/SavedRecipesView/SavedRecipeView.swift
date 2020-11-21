@@ -27,9 +27,10 @@ struct EmptySavedRecipesStateView:View {
     var body: some View{
         ZStack{
             VStack(spacing:10){
-                Image("Card5")
+                Image("shooping")
                     .resizable()
-                    .frame(width: 250 , height: 250)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300 , height: 300)
                 Text("You Do Not Have Saved Recipes Currently Go And Pick Some!")
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.center)
@@ -37,6 +38,6 @@ struct EmptySavedRecipesStateView:View {
                     .padding()
             }
         }
-        .offset(y:-30)
+        .offset(y:-60)
     }
 }
