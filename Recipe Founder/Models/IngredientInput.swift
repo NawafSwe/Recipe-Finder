@@ -9,4 +9,5 @@ import Foundation
 struct IngredientInput:Identifiable {
     var id = UUID()
     let name:String
+    
 }

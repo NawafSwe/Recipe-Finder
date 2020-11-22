@@ -9,13 +9,15 @@ import SwiftUI
 struct SearchRecipeView: View {
     @Binding var dismissView : Bool
     @StateObject private var viewModel = SearchRecipeViewModel()
-    
-    
     var body: some View {
         ZStack {
             NavigationView{
-                List(viewModel.ingredients){ ingredient in
-                    Text(ingredient.name)
+                List{
+                    ForEach(viewModel.ingredients){ ingredient in
+                        Text(ingredient.name)
+                    }
+                    /// deleting items by swipe
+                    .onDelete(perform: viewModel.removeIngredient)
                 }
                 
                 /// disable list if the user filling new ingredient
@@ -71,5 +73,11 @@ struct horizontalButtonContainers: View{
             })
             {  PlusButton() }
         }
+    }
+}
+//MARK:- XmarkDismiss nav view
+struct DismissNavigationView:View{
+    var body: some View{
+        Text("Dismiss")
     }
 }

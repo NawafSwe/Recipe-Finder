@@ -20,7 +20,7 @@ struct InputSearchView: View {
                 
                 DispatchQueue.main.async {
                     /// add the ingredient to the list
-                    viewModel.ingredients.append(IngredientInput(name: viewModel.ingredientInput))
+                    viewModel.addIngredients(viewModel.ingredientInput)
                     
                     /// clear text
                     viewModel.ingredientInput = ""

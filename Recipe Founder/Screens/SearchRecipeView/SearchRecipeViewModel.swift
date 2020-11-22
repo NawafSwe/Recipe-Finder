@@ -30,4 +30,14 @@ final class SearchRecipeViewModel: ObservableObject{
                 }
             }
     }
+    
+    func addIngredients(_ name:String)->Void{
+        ingredients.append(IngredientInput(name: name))
+    }
+    
+    func removeIngredient(at index: IndexSet) -> Void{
+        ingredients.remove(atOffsets: index)
+    }
 }
+
+
