@@ -210,8 +210,8 @@
 		397A59B42566D65000A8FE1E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				39F91ACA2569BE5F00D297AA /* RecipeResultView */,
 				3923777825664367004B3819 /* HomeTabBarView.swift */,
+				39F91ACA2569BE5F00D297AA /* RecipeResultView */,
 				3947802B25688AB500676584 /* AccountView */,
 				39460C312566DA200085B121 /* SearchRecipeView */,
 				397A59B72566D69300A8FE1E /* HomeView */,

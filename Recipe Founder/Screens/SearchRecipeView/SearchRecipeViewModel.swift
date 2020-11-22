@@ -11,4 +11,23 @@ final class SearchRecipeViewModel: ObservableObject{
     @Published var isShowForm = false
     @Published var ingredients : [IngredientInput] = []
     @Published var ingredientInput:String = ""
+    @Published var recipes:[RecipeModel] = []
+    @Published var showResults  = false
+    var ingredientsStrings:[String] { ingredients.map {$0.name} }
+    
+    
+    func fetchRecipes(ingredients:[String] ) -> Void {
+            RecipeServices.sheared.fetchRecipes(ingredients: ingredients) {   result in
+                switch result{
+                    case .success(let recipes):
+                        DispatchQueue.main.async {
+                            self.recipes = recipes
+                            self.showResults = true
+                        }
+                       
+                    case .failure(let error):
+                        print(error)
+                }
+            }
     }
+}

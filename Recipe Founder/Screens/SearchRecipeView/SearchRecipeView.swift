@@ -9,7 +9,7 @@ import SwiftUI
 struct SearchRecipeView: View {
     @Binding var dismissView : Bool
     @StateObject private var viewModel = SearchRecipeViewModel()
-    @State var showResults  = false
+    
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct SearchRecipeView: View {
                 /// disable list if the user filling new ingredient
                 .disabled(viewModel.isShowForm)
                 .navigationBarTitle("Search Recipes ☘️")
-                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $showResults)
+                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults)
                                     ,trailing:
                                         Button(action:{ self.dismissView.toggle()})
                                             {DismissXmarkView()}
@@ -32,15 +32,16 @@ struct SearchRecipeView: View {
             .blur(radius: viewModel.isShowForm ? 5 : 0 )
             .shadow(radius:  viewModel.isShowForm ? 10 : 0)
             
-            if showResults{
-                RecipeResultsView(dissmiss: $showResults)
-                    .transition(.move(edge: .bottom))
+            if viewModel.showResults{
+                RecipeResultsView(dissmiss: $viewModel.showResults, recipes: $viewModel.recipes)
+                //.transition(.move(edge: .top))
+                //.animation(.easeOut(duration: 0.1))
             }
             
             if viewModel.isShowForm{
                 InputSearchView(viewModel: viewModel)
-                    .transition(.move(edge: .top))
-                    .animation(.easeOut(duration: 0.4))
+                //.transition(.move(edge: .top))
+                //.animation(.easeOut(duration: 0.1))
             }
         }
     }
@@ -61,7 +62,7 @@ struct horizontalButtonContainers: View{
         HStack{
             Button(action:{
                 /// do search
-                showResult.toggle()
+                viewModel.fetchRecipes(ingredients: viewModel.ingredientsStrings)
             }){ MagnifyButton()}
             Button(action:{
                 /// show form

@@ -20,7 +20,7 @@ struct SettingView: View {
                             
                         }label:{ SettingCellView(imageName: "person.crop.circle", title: "Account") }
                         .sheet(isPresented: $showAccountSetting){
-                            AccountView()
+                            AccountView(dismiss: $showAccountSetting)
                         }
                         
                         Button{ showSafari.toggle()

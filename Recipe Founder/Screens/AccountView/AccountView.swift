@@ -12,6 +12,7 @@ struct AccountView: View {
     @State private var lastName = ""
     @State private var birthday = Date()
     @State private var password = ""
+    @Binding var dismiss:Bool
     var body: some View {
         NavigationView{
             Form{
@@ -53,13 +54,13 @@ struct AccountView: View {
                 }
                 .accentColor(.tabItemColor)
             }
-            
+            .navigationBarItems(leading: Button(action:{self.dismiss.toggle()}){DismissXmarkView()})
             .navigationTitle("Account Setting 😇")
         }
     }
 }
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView(dismiss: .constant(false))
     }
 }

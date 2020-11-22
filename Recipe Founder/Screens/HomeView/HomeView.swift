@@ -29,21 +29,12 @@ struct HomeView: View {
             
             if showSearchView {
                 SearchRecipeView(dismissView: $showSearchView)
-                    .transition(.move(edge: .bottom))
-                    .animation(.easeIn)
+                /// animation is inherited to all views which may make the app heavy
+                //                    .transition(.move(edge: .bottom))
+                //                    .animation(.easeIn)
             }
             
         }
-        // .onAppear{
-        //            RecipeServices.sheared.fetchRecipes(ingredients: ["meat"]) { result in
-        //                switch result{
-        //                    case .success(let recipes):
-        //                        print(recipes)
-        //                    case .failure(let err):
-        //                        print(err)
-        //                }
-        //            }
-        //        }
     }
 }
 

@@ -37,7 +37,7 @@ final class RecipeServices {
         /// encoder to encode data
         do{
             /// JSONSerialization for body
-            let body  = ["ingredients":ingredients,"number": 50] as [String : Any]
+            let body  = ["ingredients":ingredients,"number": 15] as [String : Any]
             request.httpBody = try JSONSerialization.data(withJSONObject: body,options: [.prettyPrinted])
             
         }catch _ {

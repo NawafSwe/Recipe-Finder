@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct RecipeDetailsView: View {
     let recipe:RecipeModel
     @Binding var dismiss:Bool
@@ -15,7 +14,9 @@ struct RecipeDetailsView: View {
     var body: some View {
         VStack{
             RecipeImageView(url: recipe.image ?? "")
-                .frame(width: 220, height: 200)
+                .frame(width: 320, height: 200)
+                .cornerRadius(32)
+                
             VStack {
                 Text(recipe.title)
                     .font(.title3)
@@ -27,7 +28,7 @@ struct RecipeDetailsView: View {
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
-            .padding()
+            .padding(.vertical,20)
             
             Divider()
             Section(header:Text("Statistics")) {
@@ -70,9 +71,10 @@ struct RecipeDetailsView: View {
                 
             }
             .cornerRadius(20)
-            .padding()
+            .padding(.top,20)
             .sheet(isPresented: $showSafari) {
                 SafariView(url: URL(string: recipe.sourceUrl ?? "") ??  URL(string:"Not found in case")! )
+                    
             }
             
             

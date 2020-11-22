@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct RecipeResultsView: View {
-    @StateObject var viewModel = RecipeResultViewModel()
+    @ObservedObject var viewModel = RecipeResultViewModel()
     @Binding var dissmiss:Bool
+    @Binding var recipes : [RecipeModel]
+   
     var body: some View {
         ZStack{
             NavigationView {
                 List{
-                    ForEach(MockData.recipeList){recipe in
+                    ForEach(recipes){recipe in
                         RecipeCellView(recipe: recipe)
                             .onTapGesture {
                                 DispatchQueue.main.async {
@@ -36,7 +38,7 @@ struct RecipeResultsView: View {
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
                 RecipeDetailsView(recipe: viewModel.recipe!,dismiss: $viewModel.showDetail)
-                    .transition(.move(edge: .top))
+                   
             }
             
         }
@@ -44,6 +46,6 @@ struct RecipeResultsView: View {
 }
 struct RecipeResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeResultsView(dissmiss: .constant(false))
+        RecipeResultsView(dissmiss: .constant(false), recipes: .constant(MockData.recipeList))
     }
 }
