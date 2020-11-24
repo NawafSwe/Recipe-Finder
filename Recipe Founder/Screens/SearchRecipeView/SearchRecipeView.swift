@@ -74,7 +74,7 @@ struct SearchRecipeView: View {
 struct SearchRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         SearchRecipeView(dismissView:.constant(false))
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
     }
 }
 

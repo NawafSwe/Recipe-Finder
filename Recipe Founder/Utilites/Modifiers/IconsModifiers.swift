@@ -14,10 +14,14 @@ struct IconsModifiers: ViewModifier{
     func body(content: Content) -> some View {
         content
             //.label black in white mode and white in dark mode
-            .foregroundColor(Color(.label))
+            .foregroundColor(Color(.systemBackground))
             .imageScale(scale)
             // 44 is a touch target
             .frame(width:height, height: width)
-            .background(Color.iconsBackground)
+            .background(
+                Circle()
+                    .frame(width: 30, height: 50, alignment: .center)
+                    .accentColor(.iconsBackground)
+            )
     }
 }
