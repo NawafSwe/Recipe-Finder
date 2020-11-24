@@ -50,6 +50,7 @@ struct InputSearchView: View {
                 DismissXmarkView()
                     .padding(.horizontal,5)
                     .padding(.vertical,3)
+                    
                 
             }
             , alignment: .topTrailing)

@@ -59,6 +59,8 @@ struct SearchRecipeView: View {
                 .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults) ,trailing: Button(
                                         action:{ self.dismissView.toggle() }) { DismissXmarkView() }
                 )
+                /// disabling buttons in navigation view in case user shows form
+                .disabled(viewModel.isShowForm)
             }
             /// if the result fetched
             if viewModel.showResults{
@@ -94,6 +96,7 @@ struct horizontalButtonContainers: View{
                 
             })
             {  PlusButton() }
+       
         }
     }
 }
