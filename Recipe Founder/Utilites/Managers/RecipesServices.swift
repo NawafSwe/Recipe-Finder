@@ -24,6 +24,11 @@ final class RecipeServices {
     
     /// fetching recipes from server
     func fetchRecipes(ingredients : [String] , completion: @escaping (Result<[RecipeModel],NetworkErr>) ->Void ){
+        /// making sure the ingredients list is not empty
+        if ingredients.isEmpty{
+            completion(.failure(.emptyBody))
+            return
+        }
         /// setting the url
         guard let url = URL(string: fullURL ) else{
             completion(.failure(.invalidURL))
@@ -82,8 +87,6 @@ final class RecipeServices {
         task.resume()
         
     }
-    
-    
     /// getting image  from the server
     func getImage(url: String , completion: @escaping  (UIImage?) ->Void){
         
@@ -112,4 +115,3 @@ final class RecipeServices {
     }
     
 }
-

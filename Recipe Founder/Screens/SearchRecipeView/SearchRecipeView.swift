@@ -33,6 +33,11 @@ struct SearchRecipeView: View {
             }
             .blur(radius: viewModel.isShowForm ? 5 : 0 )
             .shadow(radius:  viewModel.isShowForm ? 10 : 0)
+            /// if there is an error
+            .alert(item: $viewModel.alertItem){ alert in
+                Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
+                
+            }
             
             if viewModel.showResults{
                 RecipeResultsView(dissmiss: $viewModel.showResults, recipes: $viewModel.recipes)
