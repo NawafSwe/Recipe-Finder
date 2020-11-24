@@ -11,58 +11,68 @@ struct SearchRecipeView: View {
     @StateObject private var viewModel = SearchRecipeViewModel()
     var body: some View {
         ZStack {
-            NavigationView{
-                
-                
-                List{
-                    ForEach(viewModel.ingredients){ ingredient in
-                        Text(ingredient.name)
-                    }
-                    /// deleting items by swipe
-                    .onDelete(perform: viewModel.removeIngredient)
-                }
             
-                /// disable list if the user filling new ingredient
-                .disabled(viewModel.isShowForm)
+            NavigationView {
+                ZStack{
+                    List{
+                        ForEach(viewModel.ingredients){ ingredient in
+                            Text(ingredient.name)
+                        }
+                        /// deleting items by swipe
+                        .onDelete(perform: viewModel.removeIngredient)
+                        /// on the list itsself
+                        .blur(radius: viewModel.isShowForm ? 5 : 0 )
+                        .shadow(radius:  viewModel.isShowForm ? 10 : 0)
+                    }
+                    
+                    /// changing style list
+                    .listStyle(PlainListStyle())
+                    /// disable list if the user filling new ingredient
+                    .disabled(viewModel.isShowForm)
+                    
+                    
+                    /// if there is an error from the list or on the network call
+                    .alert(item: $viewModel.alertItem){ alert in
+                        Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
+                        
+                    }
+                    
+                    /// if empty list
+                    if viewModel.ingredients.isEmpty{
+                        EmptyIngredientsListView()
+                            .blur(radius: viewModel.isShowForm ? 5 : 0 )
+                            .shadow(radius:  viewModel.isShowForm ? 10 : 0)
+                    }
+                    
+                    if viewModel.isShowForm{
+                        InputSearchView(viewModel: viewModel)
+                            .transition(.move(edge: .top))
+                            .animation(.easeOut(duration: 0.1))
+                            .animation(nil)
+                    }
+                    
+                    if viewModel.isLoading{
+                        SearchRecipeLottieView()
+                    }
+                    
+                    
+                }
                 .navigationBarTitle("Search Recipes ☘️")
                 .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults)
                                     ,trailing:
                                         Button(action:{ self.dismissView.toggle()})
                                             {DismissXmarkView()}
                 )
-                
-                
-                
-                
             }
-            
-            .blur(radius: viewModel.isShowForm ? 5 : 0 )
-            .shadow(radius:  viewModel.isShowForm ? 10 : 0)
-            /// if there is an error
-            .alert(item: $viewModel.alertItem){ alert in
-                Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
-                
-            }
-            /// if empty list
-            if viewModel.ingredients.isEmpty{
-                
-                EmptyIngredientsListView()
-            }
-            
+            /// if the result fetched
             if viewModel.showResults{
+                /// to cover all the page
+                Color(.systemBackground)
+                    .edgesIgnoringSafeArea(.all)
                 RecipeResultsView(dissmiss: $viewModel.showResults, recipes: $viewModel.recipes)
-                //.transition(.move(edge: .top))
-                //.animation(.easeOut(duration: 0.1))
-            }
-            
-            if viewModel.isLoading{
-                SearchRecipeLottieView()
-            }
-            
-            if viewModel.isShowForm{
-                InputSearchView(viewModel: viewModel)
-                //.transition(.move(edge: .top))
-                //.animation(.easeOut(duration: 0.1))
+                    //.transition(.move(edge: .top))
+                    //.animation(.easeOut(duration: 0.1))
+                    .animation(nil)
             }
         }
     }
@@ -73,7 +83,6 @@ struct SearchRecipeView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
     }
 }
-
 
 //MARK:- horizontalButtonContainers
 struct horizontalButtonContainers: View{

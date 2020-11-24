@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension AlertContext{
+    static let emptyInput = AlertItem(title: Text("Invalid Input"), message: Text("Please ingredient Cannot be empty String "), dismissButton: .default(Text("Got It!")))
+}

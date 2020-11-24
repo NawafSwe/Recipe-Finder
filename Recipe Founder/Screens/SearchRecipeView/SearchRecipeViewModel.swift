@@ -23,13 +23,13 @@ final class SearchRecipeViewModel: ObservableObject{
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             RecipeServices.sheared.fetchRecipes(ingredients: ingredients) {   result in
-                self.isLoading = false
                 DispatchQueue.main.async {
+                    self.isLoading = false
                     switch result{
                         case .success(let recipes):
                             self.recipes = recipes
                             self.showResults = true
-                           
+                            
                         case .failure(let error):
                             switch error {
                                 case .invalidData:
@@ -50,7 +50,14 @@ final class SearchRecipeViewModel: ObservableObject{
         }
     }
     func addIngredients(_ name:String)->Void{
-        ingredients.append(IngredientInput(name: name))
+        ///validating input
+        if name.isEmpty{
+            alertItem = AlertContext.emptyInput
+            return
+        }else{
+            ingredients.append(IngredientInput(name: name))
+            
+        }
     }
     
     func removeIngredient(at index: IndexSet) -> Void{

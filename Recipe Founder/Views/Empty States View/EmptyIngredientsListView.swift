@@ -22,7 +22,7 @@ struct EmptyIngredientsListView: View {
                     .padding()
             }
         }
-        .offset(y:-60)
+        .offset(y:-100)
     }
 }
 
