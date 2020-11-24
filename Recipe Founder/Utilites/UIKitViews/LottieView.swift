@@ -55,7 +55,9 @@ struct SearchRecipeLottieView:View{
         LottieView(fileName: "searchRecipe")
         }
         .frame(width: 300, height: 300, alignment: .center)
-        .background(blur(radius: 3))
+        .background(BlurView(style: .systemMaterial))
+        .cornerRadius(25)
+        .shadow(radius: 5)
     }
 }
 
