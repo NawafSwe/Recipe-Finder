@@ -122,6 +122,7 @@
 		3923777525664367004B3819 /* Recipe Founder */ = {
 			isa = PBXGroup;
 			children = (
+				393A1B55256D9C3A00A0C4EA /* vector-images */,
 				39B40C05256717DF003973C9 /* Models */,
 				397A59B22566D63300A8FE1E /* Utilites */,
 				397A59B82566D6A700A8FE1E /* Views */,
@@ -166,6 +167,13 @@
 				393A1B52256D953000A0C4EA /* IconsModifiers.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		393A1B55256D9C3A00A0C4EA /* vector-images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "vector-images";
 			sourceTree = "<group>";
 		};
 		39460C312566DA200085B121 /* SearchRecipeView */ = {
