@@ -11,13 +11,8 @@ import SwiftUI
 struct MagnifyButton:View {
     var body: some View {
         Image(systemName: "magnifyingglass")
-            //.label black in white mode and white in dark mode
-            .foregroundColor(Color(.label))
-            .imageScale(.medium)
-            // 44 is a touch target
-            .frame(width:44, height: 44)
+            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44))
     }
-    
     
     struct MagnifyButton_Previews: PreviewProvider {
         static var previews: some View {

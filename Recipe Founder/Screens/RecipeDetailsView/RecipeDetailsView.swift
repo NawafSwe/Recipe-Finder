@@ -67,7 +67,7 @@ struct RecipeDetailsView: View {
                     .accentColor(.white)
                     .font(.body)
                     .frame(width: 300,height: 50)
-                    .background(Color.tabItemColor)
+                    .background(Color.healthyColor)
                 
             }
             .cornerRadius(20)

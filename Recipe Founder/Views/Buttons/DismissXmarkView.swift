@@ -11,11 +11,7 @@ import SwiftUI
 struct DismissXmarkView:View {
     var body: some View{
         Image(systemName: "xmark")
-            //.label black in white mode and white in dark mode
-            .foregroundColor(Color(.label))
-            .imageScale(.small)
-            // 44 is a touch target
-            .frame(width:44, height: 44)
+            .modifier(IconsModifiers(scale: .small, width: 44, height: 44))
     }
 }
 

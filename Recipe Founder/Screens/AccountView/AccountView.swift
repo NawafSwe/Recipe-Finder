@@ -52,7 +52,7 @@ struct AccountView: View {
                 }label:{
                     Text("Save Changes")
                 }
-                .accentColor(.tabItemColor)
+                .accentColor(.healthyColor)
             }
             .navigationBarItems(leading: Button(action:{self.dismiss.toggle()}){DismissXmarkView()})
             .navigationTitle("Account Setting 😇")

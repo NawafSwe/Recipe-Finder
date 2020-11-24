@@ -56,10 +56,8 @@ struct SearchRecipeView: View {
                     
                 }
                 .navigationBarTitle("Search Recipes ☘️")
-                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults)
-                                    ,trailing:
-                                        Button(action:{ self.dismissView.toggle()})
-                                            {DismissXmarkView()}
+                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults) ,trailing: Button(
+                                        action:{ self.dismissView.toggle() }) { DismissXmarkView() }
                 )
             }
             /// if the result fetched

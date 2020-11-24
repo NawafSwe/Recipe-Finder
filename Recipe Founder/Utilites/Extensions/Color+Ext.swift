@@ -9,5 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static var tabItemColor = Color(#colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1))
+    static let healthyColor = Color(#colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1))
+    static let bodyBackground = Color("viewBackground")
+    static let iconsBackground = Color("iconBackground")
 }

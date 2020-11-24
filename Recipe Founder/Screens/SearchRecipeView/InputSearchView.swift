@@ -4,7 +4,6 @@
 //
 //  Created by Nawaf B Al sharqi on 19/11/2020.
 //
-
 import SwiftUI
 struct InputSearchView: View {
     @ObservedObject var viewModel: SearchRecipeViewModel
@@ -14,6 +13,8 @@ struct InputSearchView: View {
                 .font(.title2)
                 .padding()
             TextField( "Ingredient Goes Here", text: $viewModel.ingredientInput)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width:300)
             Button{
@@ -30,7 +31,7 @@ struct InputSearchView: View {
                 Text("Add")
                     .frame(width: 190, height: 50, alignment: .center)
                     .accentColor(.white)
-                    .background(Color.tabItemColor)
+                    .background(Color.healthyColor)
                     .cornerRadius(30)
             }
             .padding()
