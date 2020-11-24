@@ -11,6 +11,10 @@ struct AlertItem:Identifiable{
     var id = UUID()
     var message:Text
     var title:Text
-    var dissmisButton:Alert.Button
-    }
+    var dismissButton:Alert.Button
+}
 
+
+//MARK:- AlertContext
+/// Alert Context has all different alerts types
+struct AlertContext{ }

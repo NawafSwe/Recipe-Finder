@@ -29,9 +29,11 @@ struct HomeView: View {
             
             if showSearchView {
                 SearchRecipeView(dismissView: $showSearchView)
-                /// animation is inherited to all views which may make the app heavy
-                //                    .transition(.move(edge: .bottom))
-                //                    .animation(.easeIn)
+                    /// animation is inherited to all views which may make the app heavy
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeIn)
+                    /// to prevent propagation to all views
+                    .animation(nil)
             }
             
         }
