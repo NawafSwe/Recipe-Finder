@@ -48,3 +48,20 @@ struct LottieView : UIViewRepresentable{
     }
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) { }
 }
+
+struct SearchRecipeLottieView:View{
+    var body: some View{
+        VStack{
+        LottieView(fileName: "searchRecipe")
+        }
+        .frame(width: 300, height: 300, alignment: .center)
+        .background(blur(radius: 3))
+    }
+}
+
+struct SearchRecipeLottieView_Previews: PreviewProvider{
+    static var previews: some View {
+        SearchRecipeLottieView()
+    }
+    
+}

@@ -14,6 +14,10 @@
 		393526CE256D6F350013D539 /* RecipeErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393526CD256D6F350013D539 /* RecipeErr.swift */; };
 		393526D3256D75A90013D539 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 393526D2256D75A90013D539 /* Lottie */; };
 		393526D6256D75FD0013D539 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393526D5256D75FD0013D539 /* LottieView.swift */; };
+		393526DC256D78E90013D539 /* ipadSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 393526D9256D78E90013D539 /* ipadSearch.json */; };
+		393526DD256D78E90013D539 /* mignifySearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 393526DA256D78E90013D539 /* mignifySearch.json */; };
+		393526DE256D78E90013D539 /* searchRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 393526DB256D78E90013D539 /* searchRecipe.json */; };
+		393526E1256D7A210013D539 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393526E0256D7A210013D539 /* BlurView.swift */; };
 		39460C332566DA360085B121 /* SearchRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C322566DA360085B121 /* SearchRecipeView.swift */; };
 		39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C372566DF000085B121 /* DismissXmarkView.swift */; };
 		39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C3B2566DF190085B121 /* MagnifyButton.swift */; };
@@ -51,6 +55,10 @@
 		3923777F25664368004B3819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		393526CD256D6F350013D539 /* RecipeErr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeErr.swift; sourceTree = "<group>"; };
 		393526D5256D75FD0013D539 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		393526D9256D78E90013D539 /* ipadSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ipadSearch.json; sourceTree = "<group>"; };
+		393526DA256D78E90013D539 /* mignifySearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mignifySearch.json; sourceTree = "<group>"; };
+		393526DB256D78E90013D539 /* searchRecipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchRecipe.json; sourceTree = "<group>"; };
+		393526E0256D7A210013D539 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		39460C322566DA360085B121 /* SearchRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeView.swift; sourceTree = "<group>"; };
 		39460C372566DF000085B121 /* DismissXmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissXmarkView.swift; sourceTree = "<group>"; };
 		39460C3B2566DF190085B121 /* MagnifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyButton.swift; sourceTree = "<group>"; };
@@ -138,6 +146,16 @@
 			path = RecipesAlerts;
 			sourceTree = "<group>";
 		};
+		393526D8256D78D20013D539 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				393526D9256D78E90013D539 /* ipadSearch.json */,
+				393526DA256D78E90013D539 /* mignifySearch.json */,
+				393526DB256D78E90013D539 /* searchRecipe.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
 		39460C312566DA200085B121 /* SearchRecipeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +190,7 @@
 			children = (
 				394780342568939900676584 /* SafariView.swift */,
 				393526D5256D75FD0013D539 /* LottieView.swift */,
+				393526E0256D7A210013D539 /* BlurView.swift */,
 			);
 			path = UIKitViews;
 			sourceTree = "<group>";
@@ -205,6 +224,7 @@
 		397A59B22566D63300A8FE1E /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				393526D8256D78D20013D539 /* Lotties */,
 				394780332568938700676584 /* UIKitViews */,
 				39678898256868DE0025ADE5 /* Alerts */,
 				39C9E614256834C6005C824E /* Managers */,
@@ -388,6 +408,9 @@
 			files = (
 				3923777E25664368004B3819 /* Preview Assets.xcassets in Resources */,
 				3923777B25664368004B3819 /* Assets.xcassets in Resources */,
+				393526DC256D78E90013D539 /* ipadSearch.json in Resources */,
+				393526DE256D78E90013D539 /* searchRecipe.json in Resources */,
+				393526DD256D78E90013D539 /* mignifySearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +437,7 @@
 				39F91AC72569B69600D297AA /* RecipeDetailsView.swift in Sources */,
 				39B40C0C25671A25003973C9 /* SearchRecipeViewModel.swift in Sources */,
 				39F91ACC2569BE8900D297AA /* RecipeResultViewModel.swift in Sources */,
+				393526E1256D7A210013D539 /* BlurView.swift in Sources */,
 				394780352568939900676584 /* SafariView.swift in Sources */,
 				393526D6256D75FD0013D539 /* LottieView.swift in Sources */,
 				39460C3F2566DF380085B121 /* PlusButton.swift in Sources */,
