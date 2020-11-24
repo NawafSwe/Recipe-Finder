@@ -25,8 +25,6 @@ struct InputSearchView: View {
                     /// clear text
                     viewModel.ingredientInput = ""
                     
-                    /// after adding a new ingredient dismiss from the view
-                    viewModel.isShowForm = false
                 }
             }label:{
                 Text("Add")

@@ -4,14 +4,12 @@
 //
 //  Created by Nawaf B Al sharqi on 19/11/2020.
 //
-
 import SwiftUI
 struct SearchRecipeView: View {
     @Binding var dismissView : Bool
     @StateObject private var viewModel = SearchRecipeViewModel()
     var body: some View {
         ZStack {
-            
             NavigationView {
                 ZStack{
                     List{
@@ -70,8 +68,6 @@ struct SearchRecipeView: View {
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
                 RecipeResultsView(dissmiss: $viewModel.showResults, recipes: $viewModel.recipes)
-                    //.transition(.move(edge: .top))
-                    //.animation(.easeOut(duration: 0.1))
                     .animation(nil)
             }
         }

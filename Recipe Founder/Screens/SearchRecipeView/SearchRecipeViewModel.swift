@@ -56,7 +56,10 @@ final class SearchRecipeViewModel: ObservableObject{
             return
         }else{
             ingredients.append(IngredientInput(name: name))
-            
+            DispatchQueue.main.async {
+                /// after adding a new ingredient dismiss from the view
+                self.isShowForm = false
+            }
         }
     }
     
