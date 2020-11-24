@@ -12,6 +12,8 @@ struct SearchRecipeView: View {
     var body: some View {
         ZStack {
             NavigationView{
+                
+                
                 List{
                     ForEach(viewModel.ingredients){ ingredient in
                         Text(ingredient.name)
@@ -19,7 +21,7 @@ struct SearchRecipeView: View {
                     /// deleting items by swipe
                     .onDelete(perform: viewModel.removeIngredient)
                 }
-                
+            
                 /// disable list if the user filling new ingredient
                 .disabled(viewModel.isShowForm)
                 .navigationBarTitle("Search Recipes ☘️")
@@ -30,7 +32,10 @@ struct SearchRecipeView: View {
                 )
                 
                 
+                
+                
             }
+            
             .blur(radius: viewModel.isShowForm ? 5 : 0 )
             .shadow(radius:  viewModel.isShowForm ? 10 : 0)
             /// if there is an error
@@ -38,11 +43,20 @@ struct SearchRecipeView: View {
                 Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
                 
             }
+            /// if empty list
+            if viewModel.ingredients.isEmpty{
+                
+                EmptyIngredientsListView()
+            }
             
             if viewModel.showResults{
                 RecipeResultsView(dissmiss: $viewModel.showResults, recipes: $viewModel.recipes)
                 //.transition(.move(edge: .top))
                 //.animation(.easeOut(duration: 0.1))
+            }
+            
+            if viewModel.isLoading{
+                SearchRecipeLottieView()
             }
             
             if viewModel.isShowForm{
@@ -56,7 +70,7 @@ struct SearchRecipeView: View {
 struct SearchRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         SearchRecipeView(dismissView:.constant(false))
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
     }
 }
 

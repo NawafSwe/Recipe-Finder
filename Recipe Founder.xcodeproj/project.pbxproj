@@ -18,6 +18,7 @@
 		393526DD256D78E90013D539 /* mignifySearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 393526DA256D78E90013D539 /* mignifySearch.json */; };
 		393526DE256D78E90013D539 /* searchRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 393526DB256D78E90013D539 /* searchRecipe.json */; };
 		393526E1256D7A210013D539 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393526E0256D7A210013D539 /* BlurView.swift */; };
+		393526E4256D7BA00013D539 /* EmptyIngredientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393526E3256D7BA00013D539 /* EmptyIngredientsListView.swift */; };
 		39460C332566DA360085B121 /* SearchRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C322566DA360085B121 /* SearchRecipeView.swift */; };
 		39460C382566DF000085B121 /* DismissXmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C372566DF000085B121 /* DismissXmarkView.swift */; };
 		39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39460C3B2566DF190085B121 /* MagnifyButton.swift */; };
@@ -59,6 +60,7 @@
 		393526DA256D78E90013D539 /* mignifySearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mignifySearch.json; sourceTree = "<group>"; };
 		393526DB256D78E90013D539 /* searchRecipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchRecipe.json; sourceTree = "<group>"; };
 		393526E0256D7A210013D539 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		393526E3256D7BA00013D539 /* EmptyIngredientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyIngredientsListView.swift; sourceTree = "<group>"; };
 		39460C322566DA360085B121 /* SearchRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeView.swift; sourceTree = "<group>"; };
 		39460C372566DF000085B121 /* DismissXmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissXmarkView.swift; sourceTree = "<group>"; };
 		39460C3B2566DF190085B121 /* MagnifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyButton.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				394780392568A68800676584 /* EmptySavedRecipesStateView.swift */,
+				393526E3256D7BA00013D539 /* EmptyIngredientsListView.swift */,
 			);
 			path = "Empty States View";
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				3923777925664367004B3819 /* HomeTabBarView.swift in Sources */,
 				393526CE256D6F350013D539 /* RecipeErr.swift in Sources */,
 				3923777725664367004B3819 /* Recipe_FounderApp.swift in Sources */,
+				393526E4256D7BA00013D539 /* EmptyIngredientsListView.swift in Sources */,
 				39460C3C2566DF190085B121 /* MagnifyButton.swift in Sources */,
 				396788A425686CBE0025ADE5 /* Array+Ext.swift in Sources */,
 				397A59B02566D56C00A8FE1E /* Color+Ext.swift in Sources */,
