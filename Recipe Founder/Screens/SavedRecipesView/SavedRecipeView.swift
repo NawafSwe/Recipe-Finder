@@ -9,23 +9,33 @@ import SwiftUI
 
 struct SavedRecipeView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Recipe.entity(), sortDescriptors: []) var recipes : FetchedResults<Recipe>
+    
     @State private var recipeList = MockData.recipeList
+    @StateObject private var viewModel = SavedRecipeViewModel()
     var body: some View {
         NavigationView {
             ZStack{
                 List{
-                    ForEach(recipes){ recipe in
-                        CoreRecipeCell(recipe: recipe)
+                    ForEach(viewModel.recipes){ recipe in
+                        RecipeCellView(recipe:  MockData.recipeSample)
+                            .onTapGesture {
+                                DispatchQueue.main.async {
+                                    self.viewModel.recipe = MockData.recipeSample
+                                }
+                            }
                     }
-                }
+                }.onAppear{ viewModel.initRecipes() }
                 /// changing style list
                 .listStyle(PlainListStyle())
                 
                 
-                if recipes.isEmpty{
+                if viewModel.recipesModel.isEmpty{
                     EmptySavedRecipesStateView()
                     
+                }
+                
+                if viewModel.showDetail{
+                    RecipeDetailsView(recipe: viewModel.recipe ?? MockData.recipeSample, dismiss: $viewModel.showDetail)
                 }
                 
             }
