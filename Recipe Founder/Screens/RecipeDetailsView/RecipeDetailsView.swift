@@ -9,7 +9,8 @@ import SwiftUI
 struct RecipeDetailsView: View {
     let recipe:RecipeModel
     @Binding var dismiss:Bool
-    @State private var showSafari = false
+    @StateObject private var viewModel = RecipeDetailsViewModel()
+    
     
     var body: some View {
         VStack{
@@ -63,7 +64,7 @@ struct RecipeDetailsView: View {
                 }
                 .padding()
             }
-            Button(action:{showSafari.toggle()}){
+            Button(action:{viewModel.showSafari.toggle()}){
                 Text("Click For More Details")
                     .fontWeight(.black)
                     .accentColor(.white)
@@ -74,7 +75,7 @@ struct RecipeDetailsView: View {
             }
             .cornerRadius(20)
             .padding(.top,20)
-            .sheet(isPresented: $showSafari) {
+            .sheet(isPresented: $viewModel.showSafari) {
                 SafariView(url: URL(string: recipe.sourceUrl ?? "") ??  URL(string:"Not found in case")! )
                     
             }
@@ -92,7 +93,7 @@ struct RecipeDetailsView: View {
             .padding(.top,10)
             ,alignment: .topLeading)
         .overlay(
-            Button(action:{}){
+            Button(action:{ viewModel.saveRecipe(recipe: recipe) }){
                 SaveButtonView()
             }
             .padding(.horizontal)

@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct SavedRecipeView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Recipe.entity(), sortDescriptors: []) var recipes : FetchedResults<Recipe>
     @State private var recipeList = MockData.recipeList
     var body: some View {
         NavigationView {
             ZStack{
                 List{
-                    ForEach(recipeList){ recipe in
-                        RecipeCellView(recipe: recipe)
+                    ForEach(recipes){ recipe in
+                        CoreRecipeCell(recipe: recipe)
                     }
                 }
                 /// changing style list
                 .listStyle(PlainListStyle())
                 
                 
-                if recipeList.isEmpty{
+                if recipes.isEmpty{
                     EmptySavedRecipesStateView()
                     
                 }

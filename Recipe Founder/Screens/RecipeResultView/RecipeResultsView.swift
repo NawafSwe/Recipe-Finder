@@ -31,9 +31,7 @@ struct RecipeResultsView: View {
                     {DismissXmarkView(circleWidth: 30, circleHeight: 25)})
                 .navigationBarTitle("Recipes Result 🧾☕️")
             }
-            //            .disabled(viewModel.showDetail)
-            //            .shadow(radius: viewModel.showDetail ? 40 : 0 )
-            //            .blur(radius: viewModel.showDetail ? 10 : 0)
+   
             
             if(viewModel.showDetail){
                 Color(.systemBackground)
