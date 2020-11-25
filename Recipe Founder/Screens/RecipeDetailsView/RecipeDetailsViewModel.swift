@@ -12,14 +12,18 @@ final class RecipeDetailsViewModel:ObservableObject{
     @Environment(\.managedObjectContext)  private var moc
     @Published var showSafari = false
     @Published var alertItem:AlertItem? = nil
+    var shared = DataStore.shared
     
     
     
     func saveRecipe(recipe: RecipeModel?){
         guard let safeRecipe = recipe else {
             return }
+        
+        print(shared.persistentContainer.managedObjectModel.entities)
        // print(safeRecipe)
         do{
+            
             /// making core recipe refers to the moc where to save
             let coreRecipe = Recipe(context: self.moc)
             coreRecipe.id = Int64(safeRecipe.id)
@@ -36,6 +40,8 @@ final class RecipeDetailsViewModel:ObservableObject{
             coreRecipe.image = safeRecipe.image ?? ""
             coreRecipe.veryHealthy = safeRecipe.veryHealthy ?? false
             try moc.save()
+            
+            
             
         }catch let error {
             print(error.localizedDescription)

@@ -7,37 +7,54 @@
 
 import Foundation
 import CoreData
+import SwiftUI
+import UIKit
 /// using singleton pattern
-
-/// What we are doing here is importing the CoreData framework, and again, using the singleton pattern, creating a static "shared" variable that holds the one instance of the class. I then create my persistent container referencing my data model file, keeping this all in a lazy var that will only instantiate when I eventually call it from ContentView. I also create the "saveContext()" method which we can call upon running any CRUD action on our data. If all this looks familiar it's because this is what was previously generated for us in our old AppDelegate files.
-
-class DataStore{
-    static let shared = DataStore()
+class DataStore: ObservableObject {
+    var context: NSManagedObjectContext { persistentContainer.viewContext }
     
-    /// accessing the container
-    let persistentContainer:NSPersistentContainer = {
-        let container = NSPersistentContainer(name:"RecipeCore")
-        container.loadPersistentStores { description, error in
-            if let error = error {
-                print(error)
-            }
-            
+        // One line singleton
+    static let shared = DataStore()
+        // Mark the class private so that it is only accessible through the singleton `shared` static property
+    private init() {}
+    private let persistentStoreName: String = "RecipeCore"
+    // MARK: - Core Data stack
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: persistentStoreName)
+                // OR - Include the following line for use with CloudKit - NSPersistentCloudKitContainer
+        // let container = NSPersistentCloudKitContainer(name: persistentStoreName)
+        // Enable history tracking
+        // (to facilitate previous NSPersistentCloudKitContainer's to load as NSPersistentContainer's)
+        // (not required when only using NSPersistentCloudKitContainer)
+        guard let persistentStoreDescriptions = container.persistentStoreDescriptions.first else {
+            fatalError("\(#function): Failed to retrieve a persistent store description.")
         }
+        persistentStoreDescriptions.setOption(true as NSNumber,
+                                              forKey: NSPersistentHistoryTrackingKey)
+        persistentStoreDescriptions.setOption(true as NSNumber,
+                                              forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error {
+                // Replace this implementation with code to handle the error appropriately.
+                fatalError("Unresolved error \(error)")
+            }
+        })
         return container
     }()
-    
-    private init(){ }
-    
-    /// trying to save to the model
-    public func saveContext(){
+    // MARK: - Core Data Saving and "other future" support (such as undo)
+    func save() {
         let context = persistentContainer.viewContext
-        if  context.hasChanges{
-            do{
+        if !context.hasChanges {
+            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
+        }
+        if context.hasChanges {
+            do {
                 try context.save()
-            }catch{
-                print(error)
+            } catch {
+                // Customize this code block to include application-specific recovery steps.
+                let nserror = error as NSError
+               print(nserror)
             }
         }
     }
 }
-

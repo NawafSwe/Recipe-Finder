@@ -12,6 +12,7 @@ struct AccountView: View {
     @State private var birthday = Date()
     @State private var password = ""
     @Binding var dismiss:Bool
+    @StateObject private var viewModel = AccountViewModel()
     var body: some View {
         NavigationView{
             Form{
@@ -46,7 +47,7 @@ struct AccountView: View {
                 
                 /// saving changes
                 Button{
-                    
+                    viewModel.saveAccount()
                 }label:{
                     Text("Save Changes")
                 }
