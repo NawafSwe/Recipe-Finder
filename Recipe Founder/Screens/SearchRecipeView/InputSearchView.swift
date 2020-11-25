@@ -47,7 +47,7 @@ struct InputSearchView: View {
                     viewModel.isShowForm = false
                 }
             }label:{
-                DismissXmarkView()
+                DismissXmarkView(circleWidth: 30 , circleHeight:25)
                     .padding(.horizontal,5)
                     .padding(.vertical,3)
                     

@@ -4,7 +4,6 @@
 //
 //  Created by Nawaf B Al sharqi on 21/11/2020.
 //
-
 import SwiftUI
 struct AccountView: View {
     @State private var email = ""
@@ -41,7 +40,6 @@ struct AccountView: View {
                 Section(header:Text("Sensitive info")){
                     SecureField("Change Password",text:$password)
                     
-                    
                     DatePicker("Birthday", selection: $birthday, displayedComponents: .date)
                         .accentColor(.black)
                 }
@@ -54,7 +52,7 @@ struct AccountView: View {
                 }
                 .accentColor(.healthyColor)
             }
-            .navigationBarItems(leading: Button(action:{self.dismiss.toggle()}){DismissXmarkView()})
+            .navigationBarItems(leading: Button(action:{self.dismiss.toggle()}){DismissXmarkView(circleWidth: 30, circleHeight: 25)})
             .navigationTitle("Account Setting 😇")
         }
     }

@@ -16,14 +16,16 @@ struct SearchRecipeView: View {
                         ForEach(viewModel.ingredients){ ingredient in
                             Text(ingredient.name)
                         }
-                        /// deleting items by swipe
+                        
+                        /// Deleting items by swipe
                         .onDelete(perform: viewModel.removeIngredient)
-                        /// on the list itsself
+                        /// on the list itself
                         .blur(radius: viewModel.isShowForm ? 5 : 0 )
                         .shadow(radius:  viewModel.isShowForm ? 10 : 0)
+                        
                     }
                     
-                    /// changing style list
+                    /// Changing style list
                     .listStyle(PlainListStyle())
                     /// disable list if the user filling new ingredient
                     .disabled(viewModel.isShowForm)
@@ -41,7 +43,7 @@ struct SearchRecipeView: View {
                             .blur(radius: viewModel.isShowForm ? 5 : 0 )
                             .shadow(radius:  viewModel.isShowForm ? 10 : 0)
                     }
-                    
+                    /// showing the form  of the input
                     if viewModel.isShowForm{
                         InputSearchView(viewModel: viewModel)
                             .transition(.move(edge: .top))
@@ -49,6 +51,7 @@ struct SearchRecipeView: View {
                             .animation(nil)
                     }
                     
+                    /// showing the loading if the user hit the search button
                     if viewModel.isLoading{
                         SearchRecipeLottieView()
                     }
@@ -56,13 +59,14 @@ struct SearchRecipeView: View {
                     
                 }
                 .navigationBarTitle("Search Recipes ☘️")
-                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults) ,trailing: Button(
-                                        action:{ self.dismissView.toggle() }) { DismissXmarkView() }
-                )
-                /// disabling buttons in navigation view in case user shows form
-                .disabled(viewModel.isShowForm)
+                /// disabling buttons in case user showing form
+                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults)
+                                    ,trailing: Button(action:{ self.dismissView.toggle() }) { DismissXmarkView(circleWidth: 30, circleHeight: 25) } )
+                
+                
+                
             }
-            /// if the result fetched
+            /// if the result fetched and succeeded show result view
             if viewModel.showResults{
                 /// to cover all the page
                 Color(.systemBackground)
@@ -96,13 +100,9 @@ struct horizontalButtonContainers: View{
                 
             })
             {  PlusButton() }
-       
+            
+            
         }
-    }
-}
-//MARK:- XmarkDismiss nav view
-struct DismissNavigationView:View{
-    var body: some View{
-        Text("Dismiss")
+        .disabled(viewModel.isShowForm)
     }
 }

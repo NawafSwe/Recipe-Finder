@@ -10,6 +10,9 @@ struct IconsModifiers: ViewModifier{
     let scale:Image.Scale
     let width:CGFloat
     let height:CGFloat
+    let circleWidth:CGFloat
+    let circleHeight:CGFloat
+    
     
     func body(content: Content) -> some View {
         content
@@ -20,7 +23,7 @@ struct IconsModifiers: ViewModifier{
             .frame(width:height, height: width)
             .background(
                 Circle()
-                    .frame(width: 30, height: 50, alignment: .center)
+                    .frame(width: circleWidth, height: circleWidth, alignment: .center)
                     .accentColor(.iconsBackground)
             )
     }

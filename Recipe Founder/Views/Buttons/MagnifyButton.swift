@@ -11,7 +11,7 @@ import SwiftUI
 struct MagnifyButton:View {
     var body: some View {
         Image(systemName: "magnifyingglass")
-            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44))
+            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44 , circleWidth: 30 , circleHeight: 25))
     }
     
     struct MagnifyButton_Previews: PreviewProvider {

@@ -11,7 +11,7 @@ import SwiftUI
 struct PlusButton:View{
     var body: some View{
         Image(systemName: "plus")
-            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44))
+            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44 , circleWidth: 30 , circleHeight: 25))
     }
 }
 struct PlusButton_Previews: PreviewProvider {

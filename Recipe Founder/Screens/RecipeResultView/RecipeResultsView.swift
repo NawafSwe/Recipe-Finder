@@ -11,7 +11,7 @@ struct RecipeResultsView: View {
     @ObservedObject var viewModel = RecipeResultViewModel()
     @Binding var dissmiss:Bool
     @Binding var recipes : [RecipeModel]
-   
+    
     var body: some View {
         ZStack{
             NavigationView {
@@ -26,8 +26,9 @@ struct RecipeResultsView: View {
                     }
                     
                 }
+                .listStyle(PlainListStyle())
                 .navigationBarItems(leading: Button(action:{ self.dissmiss.toggle()})
-                    {DismissXmarkView()})
+                    {DismissXmarkView(circleWidth: 30, circleHeight: 25)})
                 .navigationBarTitle("Recipes Result 🧾☕️")
             }
             //            .disabled(viewModel.showDetail)
@@ -38,7 +39,7 @@ struct RecipeResultsView: View {
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
                 RecipeDetailsView(recipe: viewModel.recipe!,dismiss: $viewModel.showDetail)
-                   
+                
             }
             
         }

@@ -83,7 +83,7 @@ struct RecipeDetailsView: View {
         
         .overlay(
             Button(action:{self.dismiss.toggle()}){
-                DismissXmarkView()
+                DismissXmarkView(circleWidth: 30, circleHeight: 25)
                 
             }
             .padding(.horizontal)
