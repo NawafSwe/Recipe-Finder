@@ -12,13 +12,15 @@ final class RecipeDetailsViewModel:ObservableObject{
     
     @Published var showSafari = false
     @Published var alertItem:AlertItem? = nil
+    private var core : DataStore = DataStore.shared
+
     var shared = DataStore.shared
     func saveRecipe(recipe: RecipeModel?){
         guard let safeRecipe = recipe else {
             return }
         
         /// making core recipe refers to the moc where to save
-        let coreRecipe = Recipe(context: DataStore.shared.context)
+        let coreRecipe = Recipe(context: core.context)
         coreRecipe.id = Int64(safeRecipe.id)
         coreRecipe.title = safeRecipe.title
         coreRecipe.sourceUrl = safeRecipe.sourceUrl
@@ -32,7 +34,12 @@ final class RecipeDetailsViewModel:ObservableObject{
         /// nils are not allowed in the core data so putting placeholder is good choice
         coreRecipe.image = safeRecipe.image ?? ""
         coreRecipe.veryHealthy = safeRecipe.veryHealthy ?? false
-        DataStore.shared.save()
+        self.core.save()
+        guard let safeAlert = self.core.coreAlert else {
+            alertItem = AlertContext.unableToSave
+            return
+            }
+        alertItem = safeAlert
         
     }
 }

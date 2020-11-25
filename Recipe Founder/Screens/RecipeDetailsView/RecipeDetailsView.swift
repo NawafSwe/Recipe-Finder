@@ -96,6 +96,9 @@ struct RecipeDetailsView: View {
             Button(action:{ viewModel.saveRecipe(recipe: recipe) }){
                 SaveButtonView()
             }
+            .alert(item: $viewModel.alertItem){ alert in
+                Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
+            }
             .padding(.horizontal)
             .padding(.top,10)
             , alignment: .topTrailing

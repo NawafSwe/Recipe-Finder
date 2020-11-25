@@ -12,7 +12,8 @@ import UIKit
 /// using singleton pattern
 class DataStore: ObservableObject {
     var context: NSManagedObjectContext { persistentContainer.viewContext }
-    var alertItem:AlertItem? = nil
+    var coreAlert : AlertItem? = nil
+   
         // One line singleton
     static let shared = DataStore()
         // Mark the class private so that it is only accessible through the singleton `shared` static property
@@ -40,20 +41,16 @@ class DataStore: ObservableObject {
     // MARK: - Core Data Saving and "other future" support (such as undo)
     func save() {
         let context = persistentContainer.viewContext
-        if !context.hasChanges {
-            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-        }
         if context.hasChanges {
             do {
                 try context.save()
-            } catch {
+                coreAlert = AlertContext.successSaved
+               
+            } catch _ {
                 // Customize this code block to include application-specific recovery steps.
-                let nserror = error as NSError
-                /// init an alert
-                
-               // alertItem = AlertContext
-              
+                coreAlert = AlertContext.unableToSave
             }
         }
+        
     }
 }
