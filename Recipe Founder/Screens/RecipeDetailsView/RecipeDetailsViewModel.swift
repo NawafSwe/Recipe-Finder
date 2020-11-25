@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 final class RecipeDetailsViewModel:ObservableObject{
-    @Environment(\.managedObjectContext)  private var moc
+    
     @Published var showSafari = false
     @Published var alertItem:AlertItem? = nil
     var shared = DataStore.shared
@@ -24,8 +24,9 @@ final class RecipeDetailsViewModel:ObservableObject{
        // print(safeRecipe)
         do{
             
-            /// making core recipe refers to the moc where to save
-            let coreRecipe = Recipe(context: self.moc)
+            
+            /// making core recipe refers to the context where to save
+            let coreRecipe = Recipe(context: DataStore.shared.context)
             coreRecipe.id = Int64(safeRecipe.id)
             coreRecipe.title = safeRecipe.title
             coreRecipe.sourceUrl = safeRecipe.sourceUrl
@@ -39,12 +40,9 @@ final class RecipeDetailsViewModel:ObservableObject{
             /// nils are not allowed in the core data so putting placeholder is good choice
             coreRecipe.image = safeRecipe.image ?? ""
             coreRecipe.veryHealthy = safeRecipe.veryHealthy ?? false
-            try moc.save()
-            
-            
-            
+            try! DataStore.shared.save()
         }catch let error {
-            print(error.localizedDescription)
+            print(error)
             return
         }
     }
