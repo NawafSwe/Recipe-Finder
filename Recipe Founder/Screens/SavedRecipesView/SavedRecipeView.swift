@@ -10,7 +10,6 @@ import SwiftUI
 struct SavedRecipeView: View {
     @StateObject private var viewModel = SavedRecipeViewModel()
     @FetchRequest(entity: Recipe.entity(), sortDescriptors: [])  var recipes : FetchedResults<Recipe>
-    
     var body: some View {
         ZStack {
             NavigationView{
@@ -75,4 +74,3 @@ struct SavedRecipeView_Previews: PreviewProvider {
         SavedRecipeView()
     }
 }
-

@@ -19,4 +19,7 @@ extension AlertContext {
     
     static let successDelete = AlertItem(title: Text("Success"), message: Text("You successfully deleted the recipe hope you enjoy it 😄"), dismissButton:.default(Text("Thanks!")) )
     
+    
+    static let duplicate = AlertItem(title: Text("Failure"), message: Text(" OPPS! it is seems like the recipe exists in your saved Recipe List 🤪"), dismissButton:.default(Text("Thanks!")) )
+    
 }

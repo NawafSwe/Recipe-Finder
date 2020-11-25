@@ -7,18 +7,26 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 final class RecipeDetailsViewModel:ObservableObject{
     
     @Published var showSafari = false
     @Published var alertItem:AlertItem? = nil
     private var core : DataStore = DataStore.shared
-
+    
     var shared = DataStore.shared
     func saveRecipe(recipe: RecipeModel?){
         guard let safeRecipe = recipe else {
             return }
         
+        /// checking for duplicates data
+        if checkDuplicates(with: safeRecipe.id){
+            alertItem = AlertContext.duplicate
+            return
+        }
+        
+        /// else all good
         /// making core recipe refers to the moc where to save
         let coreRecipe = Recipe(context: core.context)
         coreRecipe.id = Int64(safeRecipe.id)
@@ -35,11 +43,28 @@ final class RecipeDetailsViewModel:ObservableObject{
         coreRecipe.image = safeRecipe.image ?? ""
         coreRecipe.veryHealthy = safeRecipe.veryHealthy ?? false
         self.core.save()
+        
         guard let safeAlert = self.core.coreAlert else {
             alertItem = AlertContext.unableToSave
             return
-            }
+        }
         alertItem = safeAlert
         
+    }
+    
+    func checkDuplicates(with id:Int)-> Bool {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+        let predicate = NSPredicate(format: "id = \(NSNumber(value:id))")
+        fetchRequest.predicate = predicate
+        do {
+            
+            let results = try core.context.fetch(fetchRequest) as! [Recipe]
+            if results.count >= 1 {
+                return true}
+        } catch _{
+            return false
+        }
+        return false
     }
 }
