@@ -7,10 +7,14 @@
 
 import Foundation
 import SwiftUI
-final class SavedRecipeViewModel:ObservableObject{
-    @Published var recipe:RecipeModel?{
-        didSet{showDetail = true}
+import CoreData
+    final class SavedRecipeViewModel:NSObject ,NSFetchedResultsControllerDelegate , ObservableObject{
+        @Published var recipe:RecipeModel?{
+            didSet{showDetail = true}
+        }
+        @Published var showDetail = false
+        var core = DataStore.shared
+        @Published var alertItem: AlertItem? = nil
     }
-    @Published var showDetail = false
     
-}
+

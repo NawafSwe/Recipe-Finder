@@ -37,9 +37,7 @@ extension RecipeModel{
         self.preparationMinutes = managedRecipe.value(forKey: "preparationMinutes") as? Int
         self.healthScore = managedRecipe.value(forKey: "healthScore") as? Int
         self.sourceUrl = managedRecipe.value(forKey: "sourceUrl") as? String
-        
-        
-    }
+        }
     
 }
 
