@@ -14,8 +14,10 @@ struct RecipeDetailsView: View {
     var body: some View {
         VStack{
             RecipeImageView(url: recipe.image ?? "")
-                .frame(width: 320, height: 200)
-                .cornerRadius(32)
+//            Image("asian-flank-steak")
+//                .resizable()
+                .frame(width: 360, height: 200)
+                .cornerRadius(40)
                 
             VStack {
                 Text(recipe.title)
@@ -31,7 +33,7 @@ struct RecipeDetailsView: View {
             .padding(.vertical,20)
             
             Divider()
-            Section(header:Text("Statistics")) {
+            Section(header:Text("Additional info")) {
                 HStack (alignment:.center , spacing: 32 ) {
                     VStack{
                         Text("Likes ❤️")
@@ -83,19 +85,18 @@ struct RecipeDetailsView: View {
         
         .overlay(
             Button(action:{self.dismiss.toggle()}){
-                DismissXmarkView(circleWidth: 30, circleHeight: 25)
+                DismissXmarkView(circleWidth: 25, circleHeight: 25)
                 
             }
             .padding(.horizontal)
+            .padding(.top,10)
             ,alignment: .topLeading)
         .overlay(
             Button(action:{}){
-                Image(systemName: "heart")
-                    .renderingMode(.original)
-                    .frame(width:44 , height: 44)
+                SaveButtonView()
             }
             .padding(.horizontal)
-            .foregroundColor(.red)
+            .padding(.top,10)
             , alignment: .topTrailing
         )
         

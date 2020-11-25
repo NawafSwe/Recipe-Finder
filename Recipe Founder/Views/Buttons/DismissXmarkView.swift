@@ -13,7 +13,9 @@ struct DismissXmarkView:View {
     let circleHeight:CGFloat
     var body: some View{
         Image(systemName: "xmark")
-            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44 , circleWidth: circleWidth,circleHeight: circleHeight))
+            //.label black in white mode and white in dark mode
+            .foregroundColor(Color(.systemBackground))
+            .modifier(IconsModifiers(scale: .medium, width: 44, height: 44 , circleWidth: circleWidth,circleHeight: circleHeight , background:  .iconsBackground))
     }
 }
 

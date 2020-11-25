@@ -12,19 +12,19 @@ struct IconsModifiers: ViewModifier{
     let height:CGFloat
     let circleWidth:CGFloat
     let circleHeight:CGFloat
+    let background:Color
+    
     
     
     func body(content: Content) -> some View {
         content
-            //.label black in white mode and white in dark mode
-            .foregroundColor(Color(.systemBackground))
             .imageScale(scale)
             // 44 is a touch target
             .frame(width:height, height: width)
             .background(
                 Circle()
                     .frame(width: circleWidth, height: circleWidth, alignment: .center)
-                    .accentColor(.iconsBackground)
+                    .accentColor(background)
             )
     }
 }

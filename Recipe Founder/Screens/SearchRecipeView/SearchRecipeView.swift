@@ -93,13 +93,13 @@ struct horizontalButtonContainers: View{
             Button(action:{
                 /// do search
                 viewModel.fetchRecipes(ingredients: viewModel.ingredientsStrings)
-            }){ MagnifyButton()}
+            }){ MagnifyButtonView()}
             Button(action:{
                 /// show form
                 self.viewModel.isShowForm = true
                 
             })
-            {  PlusButton() }
+            {  PlusButtonView() }
             
             
         }
