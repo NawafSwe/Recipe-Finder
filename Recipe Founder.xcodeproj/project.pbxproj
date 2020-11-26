@@ -54,12 +54,6 @@
 		39F91AC22569B21B00D297AA /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91AC12569B21B00D297AA /* RemoteImageView.swift */; };
 		39F91AC72569B69600D297AA /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91AC62569B69600D297AA /* RecipeDetailsView.swift */; };
 		39F91ACC2569BE8900D297AA /* RecipeResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */; };
-		A112D07E257005620046C6CD /* girl-cooking@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A112D07C257005620046C6CD /* girl-cooking@1x.svg */; };
-		A112D082257005B50046C6CD /* cooking@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A112D081257005B50046C6CD /* cooking@1x.svg */; };
-		A1CA9D9825700B41009377E9 /* twitter---filled(24x24)@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9625700B40009377E9 /* twitter---filled(24x24)@1x.svg */; };
-		A1CA9D9925700B41009377E9 /* twitter(24x24)@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9725700B41009377E9 /* twitter(24x24)@1x.svg */; };
-		A1CA9D9B25700B5C009377E9 /* salad@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9A25700B5C009377E9 /* salad@1x.svg */; };
-		A1CA9D9D25700C17009377E9 /* teamwork-building@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9C25700C17009377E9 /* teamwork-building@1x.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,12 +105,6 @@
 		39F91AC12569B21B00D297AA /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		39F91AC62569B69600D297AA /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResultViewModel.swift; sourceTree = "<group>"; };
-		A112D07C257005620046C6CD /* girl-cooking@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "girl-cooking@1x.svg"; path = "../../../../../Downloads/girl-cooking@1x.svg"; sourceTree = "<group>"; };
-		A112D081257005B50046C6CD /* cooking@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "cooking@1x.svg"; path = "../../../../../Downloads/cooking@1x.svg"; sourceTree = "<group>"; };
-		A1CA9D9625700B40009377E9 /* twitter---filled(24x24)@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "twitter---filled(24x24)@1x.svg"; path = "../../../../../Downloads/twitter---filled(24x24)@1x.svg"; sourceTree = "<group>"; };
-		A1CA9D9725700B41009377E9 /* twitter(24x24)@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "twitter(24x24)@1x.svg"; path = "../../../../../Downloads/twitter(24x24)@1x.svg"; sourceTree = "<group>"; };
-		A1CA9D9A25700B5C009377E9 /* salad@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "salad@1x.svg"; path = "../../../../../Downloads/salad@1x.svg"; sourceTree = "<group>"; };
-		A1CA9D9C25700C17009377E9 /* teamwork-building@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "teamwork-building@1x.svg"; path = "../../../../../Downloads/teamwork-building@1x.svg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				399AB453256DE3AE007CB2EB /* CoreData */,
-				393A1B55256D9C3A00A0C4EA /* vector-images */,
 				39B40C05256717DF003973C9 /* Models */,
 				397A59B22566D63300A8FE1E /* Utilites */,
 				397A59B82566D6A700A8FE1E /* Views */,
@@ -196,19 +183,6 @@
 				393A1B52256D953000A0C4EA /* IconsModifiers.swift */,
 			);
 			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		393A1B55256D9C3A00A0C4EA /* vector-images */ = {
-			isa = PBXGroup;
-			children = (
-				A1CA9D9A25700B5C009377E9 /* salad@1x.svg */,
-				A1CA9D9C25700C17009377E9 /* teamwork-building@1x.svg */,
-				A1CA9D9625700B40009377E9 /* twitter---filled(24x24)@1x.svg */,
-				A1CA9D9725700B41009377E9 /* twitter(24x24)@1x.svg */,
-				A112D081257005B50046C6CD /* cooking@1x.svg */,
-				A112D07C257005620046C6CD /* girl-cooking@1x.svg */,
-			);
-			path = "vector-images";
 			sourceTree = "<group>";
 		};
 		39460C312566DA200085B121 /* SearchRecipeView */ = {
@@ -494,16 +468,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1CA9D9D25700C17009377E9 /* teamwork-building@1x.svg in Resources */,
 				3923777E25664368004B3819 /* Preview Assets.xcassets in Resources */,
 				3923777B25664368004B3819 /* Assets.xcassets in Resources */,
 				393526DC256D78E90013D539 /* ipadSearch.json in Resources */,
-				A1CA9D9925700B41009377E9 /* twitter(24x24)@1x.svg in Resources */,
-				A112D07E257005620046C6CD /* girl-cooking@1x.svg in Resources */,
-				A1CA9D9825700B41009377E9 /* twitter---filled(24x24)@1x.svg in Resources */,
 				393526DE256D78E90013D539 /* searchRecipe.json in Resources */,
-				A112D082257005B50046C6CD /* cooking@1x.svg in Resources */,
-				A1CA9D9B25700B5C009377E9 /* salad@1x.svg in Resources */,
 				393526DD256D78E90013D539 /* mignifySearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
