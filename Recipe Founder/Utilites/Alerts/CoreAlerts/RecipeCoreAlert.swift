@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 
-
 extension AlertContext {
     static let successSaved = AlertItem(title: Text("Success"), message: Text("You Successfully saved the recipe"), dismissButton:.default(Text("COOL!")) )
     

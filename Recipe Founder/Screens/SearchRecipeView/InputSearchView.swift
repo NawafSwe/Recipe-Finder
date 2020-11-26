@@ -58,6 +58,6 @@ struct InputSearchView: View {
 }
 struct InputSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        InputSearchView(viewModel: SearchRecipeViewModel())
+        InputSearchView(viewModel: SearchRecipeViewModel(dismissView: .constant(false)))
     }
 }

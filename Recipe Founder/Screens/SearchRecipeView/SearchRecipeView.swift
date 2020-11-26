@@ -6,8 +6,7 @@
 //
 import SwiftUI
 struct SearchRecipeView: View {
-    @Binding var dismissView : Bool
-    @StateObject private var viewModel = SearchRecipeViewModel()
+    @ObservedObject var viewModel: SearchRecipeViewModel
     var body: some View {
         ZStack {
             NavigationView {
@@ -61,7 +60,7 @@ struct SearchRecipeView: View {
                 .navigationBarTitle("Search Recipes ☘️")
                 /// disabling buttons in case user showing form
                 .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults)
-                                    ,trailing: Button(action:{ self.dismissView.toggle() }) { DismissXmarkView(circleWidth: 30, circleHeight: 25) } )
+                                    ,trailing: Button(action:{ viewModel.dismissView.wrappedValue.toggle() }) { DismissXmarkView(circleWidth: 30, circleHeight: 25) } )
                 
                 
                 
@@ -79,7 +78,7 @@ struct SearchRecipeView: View {
 }
 struct SearchRecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchRecipeView(dismissView:.constant(false))
+        SearchRecipeView(viewModel: SearchRecipeViewModel(dismissView: .constant(false)))
             .preferredColorScheme(.dark)
     }
 }

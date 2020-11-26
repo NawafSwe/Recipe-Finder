@@ -23,12 +23,10 @@ struct HomeView: View {
                 .navigationBarTitle("Home ☘️")
                 
             }
-            //        .sheet(isPresented: $showSearchView){
-            //            SearchRecipeView(dismissView: $showSearchView)
-            //        }
             
             if showSearchView {
-                SearchRecipeView(dismissView: $showSearchView)
+                /// injecting the search recipe view model with the binding to dismiss view
+                SearchRecipeView(viewModel: SearchRecipeViewModel(dismissView: $showSearchView))
                     /// animation is inherited to all views which may make the app heavy
                     .transition(.move(edge: .bottom))
                     .animation(.easeIn)
@@ -39,7 +37,6 @@ struct HomeView: View {
         }
     }
 }
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()

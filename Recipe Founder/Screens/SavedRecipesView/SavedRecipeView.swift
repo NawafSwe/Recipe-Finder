@@ -24,6 +24,7 @@ struct SavedRecipeView: View {
                     }
                     .onDelete(perform:deleteRecipe)
                 }
+                
                 /// changing style list
                 .listStyle(PlainListStyle())
                 /// indicates the delete operation of a recipe
@@ -31,12 +32,15 @@ struct SavedRecipeView: View {
                     Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
                 }
                 
+     
+                
                 .navigationBarTitle("Saved Recipes 🧾")
                 .navigationBarItems(leading: EditButton())
-                if recipes.isEmpty{
-                    EmptySavedRecipesStateView()
-                    
-                }
+       
+            }
+            if recipes.count == 0{
+                EmptySavedRecipesStateView()
+                
             }
             
             if viewModel.showDetail{
@@ -46,7 +50,6 @@ struct SavedRecipeView: View {
             }
         }
     }
-    
     
     func deleteRecipe(at offsets: IndexSet) {
         for offset in offsets {
@@ -68,7 +71,6 @@ struct SavedRecipeView: View {
         }
     }
 }
-
 struct SavedRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         SavedRecipeView()
