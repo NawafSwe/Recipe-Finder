@@ -56,6 +56,9 @@
 		39F91ACC2569BE8900D297AA /* RecipeResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */; };
 		A112D07E257005620046C6CD /* girl-cooking@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A112D07C257005620046C6CD /* girl-cooking@1x.svg */; };
 		A112D082257005B50046C6CD /* cooking@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A112D081257005B50046C6CD /* cooking@1x.svg */; };
+		A1CA9D9825700B41009377E9 /* twitter---filled(24x24)@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9625700B40009377E9 /* twitter---filled(24x24)@1x.svg */; };
+		A1CA9D9925700B41009377E9 /* twitter(24x24)@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9725700B41009377E9 /* twitter(24x24)@1x.svg */; };
+		A1CA9D9B25700B5C009377E9 /* salad@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9D9A25700B5C009377E9 /* salad@1x.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,9 @@
 		39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResultViewModel.swift; sourceTree = "<group>"; };
 		A112D07C257005620046C6CD /* girl-cooking@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "girl-cooking@1x.svg"; path = "../../../../../Downloads/girl-cooking@1x.svg"; sourceTree = "<group>"; };
 		A112D081257005B50046C6CD /* cooking@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "cooking@1x.svg"; path = "../../../../../Downloads/cooking@1x.svg"; sourceTree = "<group>"; };
+		A1CA9D9625700B40009377E9 /* twitter---filled(24x24)@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "twitter---filled(24x24)@1x.svg"; path = "../../../../../Downloads/twitter---filled(24x24)@1x.svg"; sourceTree = "<group>"; };
+		A1CA9D9725700B41009377E9 /* twitter(24x24)@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "twitter(24x24)@1x.svg"; path = "../../../../../Downloads/twitter(24x24)@1x.svg"; sourceTree = "<group>"; };
+		A1CA9D9A25700B5C009377E9 /* salad@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "salad@1x.svg"; path = "../../../../../Downloads/salad@1x.svg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,9 @@
 		393A1B55256D9C3A00A0C4EA /* vector-images */ = {
 			isa = PBXGroup;
 			children = (
+				A1CA9D9A25700B5C009377E9 /* salad@1x.svg */,
+				A1CA9D9625700B40009377E9 /* twitter---filled(24x24)@1x.svg */,
+				A1CA9D9725700B41009377E9 /* twitter(24x24)@1x.svg */,
 				A112D081257005B50046C6CD /* cooking@1x.svg */,
 				A112D07C257005620046C6CD /* girl-cooking@1x.svg */,
 			);
@@ -485,9 +494,12 @@
 				3923777E25664368004B3819 /* Preview Assets.xcassets in Resources */,
 				3923777B25664368004B3819 /* Assets.xcassets in Resources */,
 				393526DC256D78E90013D539 /* ipadSearch.json in Resources */,
+				A1CA9D9925700B41009377E9 /* twitter(24x24)@1x.svg in Resources */,
 				A112D07E257005620046C6CD /* girl-cooking@1x.svg in Resources */,
+				A1CA9D9825700B41009377E9 /* twitter---filled(24x24)@1x.svg in Resources */,
 				393526DE256D78E90013D539 /* searchRecipe.json in Resources */,
 				A112D082257005B50046C6CD /* cooking@1x.svg in Resources */,
+				A1CA9D9B25700B5C009377E9 /* salad@1x.svg in Resources */,
 				393526DD256D78E90013D539 /* mignifySearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
