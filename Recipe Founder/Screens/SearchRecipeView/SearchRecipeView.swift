@@ -61,8 +61,6 @@ struct SearchRecipeView: View {
                 .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel)
                                     ,trailing: Button(action:{ viewModel.dismissView.wrappedValue.toggle() }) { DismissXmarkView(circleWidth: 30, circleHeight: 25) } )
                 
-                
-                
             }
             /// if the result fetched and succeeded show result view
             if viewModel.showResults{

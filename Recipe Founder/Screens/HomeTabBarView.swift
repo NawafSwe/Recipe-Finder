@@ -4,34 +4,27 @@
 //
 //  Created by Nawaf B Al sharqi on 19/11/2020.
 //
-
 import SwiftUI
-
 struct HomeTabBarView: View {
     var body: some View {
         TabView{
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
+                    Icons.SFHouse
                     Text("Home")
                 }
-            
-            
             SavedRecipeView()
                 .tabItem {
-                    Image(systemName: "leaf")
+                    Icons.SFLeaf
                         .renderingMode(.original)
                     Text("Saved Recipes")
                     
                 }
-            
             SettingView()
                 .tabItem {
-                    Image(systemName:"gear")
+                    Icons.SFSettings
                     Text("Setting")
                 }
-            
-            
         }
         .tabViewStyle(DefaultTabViewStyle())
         .accentColor(.healthyColor)
