@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 //MARK:- ICONS
-enum Icons{
+enum Icons {
     static let  twitter_filled       = Image("twitter-filled")
     static let  twitter_notFilled    = Image("twitter-notFilled")
     static let  SFPerson             = Image(systemName:"person.crop.circle")
@@ -19,5 +19,3 @@ enum Icons{
     static let  SFSettings           = Image(systemName:"gear")
 }
 
- //MARK:- Images
- 
