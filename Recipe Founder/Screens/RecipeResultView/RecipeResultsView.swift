@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct RecipeResultsView: View {
-    @ObservedObject var viewModel = RecipeResultViewModel()
-    @Binding var dissmiss:Bool
-    @Binding var recipes : [RecipeModel]
+    @ObservedObject var viewModel : RecipeResultViewModel
+    
     
     var body: some View {
         ZStack{
             NavigationView {
                 List{
-                    ForEach(recipes){recipe in
+                    /// wrappedValue to take the recipes value 
+                    ForEach(viewModel.recipes.wrappedValue){recipe in
                         RecipeCellView(recipe: recipe)
                             .onTapGesture {
                                 DispatchQueue.main.async {
@@ -27,11 +27,11 @@ struct RecipeResultsView: View {
                     
                 }
                 .listStyle(PlainListStyle())
-                .navigationBarItems(leading: Button(action:{ self.dissmiss.toggle()})
+                .navigationBarItems(leading: Button(action:{ viewModel.dismiss.wrappedValue.toggle()})
                     {DismissXmarkView(circleWidth: 30, circleHeight: 25)})
                 .navigationBarTitle("Recipes Result 🧾☕️")
             }
-   
+            
             
             if(viewModel.showDetail){
                 Color(.systemBackground)
@@ -45,6 +45,7 @@ struct RecipeResultsView: View {
 }
 struct RecipeResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeResultsView(dissmiss: .constant(false), recipes: .constant(MockData.recipeList))
+        RecipeResultsView(viewModel: RecipeResultViewModel(dismiss: .constant(false), recipes: .constant(MockData.recipeList)))
+            .colorScheme(.dark)
     }
 }

@@ -42,7 +42,7 @@ struct AccountView: View {
                     SecureField("Change Password",text:$password)
                     
                     DatePicker("Birthday", selection: $birthday, displayedComponents: .date)
-                        .accentColor(.black)
+                        .accentColor(.text_color)
                 }
                 
                 /// saving changes
@@ -61,5 +61,6 @@ struct AccountView: View {
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView(dismiss: .constant(false))
+            .colorScheme(.dark)
     }
 }

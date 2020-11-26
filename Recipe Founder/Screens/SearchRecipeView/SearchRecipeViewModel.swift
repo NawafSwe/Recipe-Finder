@@ -17,7 +17,7 @@ final class SearchRecipeViewModel: ObservableObject{
     @Published var isLoading  = false
     var dismissView : Binding<Bool>
     var ingredientsStrings:[String] { ingredients.map {$0.name} }
-    
+ 
     //MARK:- init for the viewModel binding
     init (dismissView: Binding<Bool>){
         self.dismissView = dismissView
@@ -28,7 +28,7 @@ final class SearchRecipeViewModel: ObservableObject{
         DispatchQueue.main.async {
             self.isLoading = true
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+       
             RecipeServices.sheared.fetchRecipes(ingredients: ingredients) {   result in
                 DispatchQueue.main.async {
                     self.isLoading = false
@@ -54,7 +54,7 @@ final class SearchRecipeViewModel: ObservableObject{
                 }
             }
             
-        }
+        
     }
     func addIngredients(_ name:String)->Void{
         ///validating input

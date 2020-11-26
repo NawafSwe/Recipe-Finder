@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 final class RecipeResultViewModel : ObservableObject{
     @Published var recipe:RecipeModel?{
         didSet{showDetail = true}
     }
     @Published var showDetail = false
+     var dismiss:Binding<Bool>
+     var recipes : Binding<[RecipeModel]>
+    
+    init(dismiss:Binding<Bool> , recipes : Binding<[RecipeModel]>){
+        self.dismiss = dismiss
+        self.recipes = recipes
+    }
 }

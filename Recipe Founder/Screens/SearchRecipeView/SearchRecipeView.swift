@@ -54,12 +54,11 @@ struct SearchRecipeView: View {
                     if viewModel.isLoading{
                         SearchRecipeLottieView()
                     }
-                    
-                    
                 }
+                
                 .navigationBarTitle("Search Recipes ☘️")
                 /// disabling buttons in case user showing form
-                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel, showResult: $viewModel.showResults)
+                .navigationBarItems(leading: horizontalButtonContainers(viewModel: viewModel)
                                     ,trailing: Button(action:{ viewModel.dismissView.wrappedValue.toggle() }) { DismissXmarkView(circleWidth: 30, circleHeight: 25) } )
                 
                 
@@ -70,7 +69,7 @@ struct SearchRecipeView: View {
                 /// to cover all the page
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
-                RecipeResultsView(dissmiss: $viewModel.showResults, recipes: $viewModel.recipes)
+                RecipeResultsView(viewModel: RecipeResultViewModel(dismiss:$viewModel.showResults, recipes: $viewModel.recipes))
                     .animation(nil)
             }
         }
@@ -86,7 +85,7 @@ struct SearchRecipeView_Previews: PreviewProvider {
 //MARK:- horizontalButtonContainers
 struct horizontalButtonContainers: View{
     @ObservedObject var viewModel:SearchRecipeViewModel
-    @Binding var showResult: Bool
+  
     var body: some View{
         HStack{
             Button(action:{

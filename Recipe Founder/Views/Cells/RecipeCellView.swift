@@ -19,6 +19,7 @@ struct RecipeCellView:View{
                 .cornerRadius(10)
                 
             Text(recipe.title)
+                .foregroundColor(.text_color)
                 .font(.body)
                 .fontWeight(.light)
                 .multilineTextAlignment(.leading)

@@ -9,14 +9,17 @@ struct InputSearchView: View {
     @ObservedObject var viewModel: SearchRecipeViewModel
     var body: some View {
         VStack {
-            Text("Tell Me What You Have 🥰")
-                .font(.title2)
+            Text("Tell Me What You Have 🍎")
+                .foregroundColor(.text_color)
+                .font(.title3)
                 .padding()
             TextField( "Ingredient Goes Here", text: $viewModel.ingredientInput)
+                
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width:300)
+                
             Button{
                 
                 DispatchQueue.main.async {
@@ -37,7 +40,7 @@ struct InputSearchView: View {
             .padding()
         }
         .frame(width:320, height: 300)
-        .background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+        .background(Color.bodyBackground)
         .cornerRadius(40)
         .shadow(radius: 12)
         .overlay(
@@ -59,5 +62,6 @@ struct InputSearchView: View {
 struct InputSearchView_Previews: PreviewProvider {
     static var previews: some View {
         InputSearchView(viewModel: SearchRecipeViewModel(dismissView: .constant(false)))
+            .colorScheme(.dark)
     }
 }
