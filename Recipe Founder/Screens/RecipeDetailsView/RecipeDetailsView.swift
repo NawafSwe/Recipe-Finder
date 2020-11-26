@@ -9,13 +9,16 @@ import SwiftUI
 struct RecipeDetailsView: View {
     let recipe:RecipeModel
     @Binding var dismiss:Bool
-    @State private var showSafari = false
+    @StateObject private var viewModel = RecipeDetailsViewModel()
+    
     
     var body: some View {
         VStack{
             RecipeImageView(url: recipe.image ?? "")
-                .frame(width: 320, height: 200)
-                .cornerRadius(32)
+//            Image("asian-flank-steak")
+//                .resizable()
+                .frame(width: 360, height: 200)
+                .cornerRadius(40)
                 
             VStack {
                 Text(recipe.title)
@@ -31,7 +34,7 @@ struct RecipeDetailsView: View {
             .padding(.vertical,20)
             
             Divider()
-            Section(header:Text("Statistics")) {
+            Section(header:Text("Additional info")) {
                 HStack (alignment:.center , spacing: 32 ) {
                     VStack{
                         Text("Likes ❤️")
@@ -61,7 +64,7 @@ struct RecipeDetailsView: View {
                 }
                 .padding()
             }
-            Button(action:{showSafari.toggle()}){
+            Button(action:{viewModel.showSafari.toggle()}){
                 Text("Click For More Details")
                     .fontWeight(.black)
                     .accentColor(.white)
@@ -72,7 +75,7 @@ struct RecipeDetailsView: View {
             }
             .cornerRadius(20)
             .padding(.top,20)
-            .sheet(isPresented: $showSafari) {
+            .sheet(isPresented: $viewModel.showSafari) {
                 SafariView(url: URL(string: recipe.sourceUrl ?? "") ??  URL(string:"Not found in case")! )
                     
             }
@@ -83,19 +86,21 @@ struct RecipeDetailsView: View {
         
         .overlay(
             Button(action:{self.dismiss.toggle()}){
-                DismissXmarkView()
+                DismissXmarkView(circleWidth: 25, circleHeight: 25)
                 
             }
             .padding(.horizontal)
+            .padding(.top,10)
             ,alignment: .topLeading)
         .overlay(
-            Button(action:{}){
-                Image(systemName: "heart")
-                    .renderingMode(.original)
-                    .frame(width:44 , height: 44)
+            Button(action:{ viewModel.saveRecipe(recipe: recipe) }){
+                SaveButtonView()
+            }
+            .alert(item: $viewModel.alertItem){ alert in
+                Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
             }
             .padding(.horizontal)
-            .foregroundColor(.red)
+            .padding(.top,10)
             , alignment: .topTrailing
         )
         

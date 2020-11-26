@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+final class AccountViewModel: ObservableObject{
+    
+    func saveAccount(){
+     
+
+        
+    }
+}

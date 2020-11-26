@@ -47,9 +47,10 @@ struct InputSearchView: View {
                     viewModel.isShowForm = false
                 }
             }label:{
-                DismissXmarkView()
+                DismissXmarkView(circleWidth: 30 , circleHeight:25)
                     .padding(.horizontal,5)
                     .padding(.vertical,3)
+                    
                 
             }
             , alignment: .topTrailing)
@@ -57,6 +58,6 @@ struct InputSearchView: View {
 }
 struct InputSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        InputSearchView(viewModel: SearchRecipeViewModel())
+        InputSearchView(viewModel: SearchRecipeViewModel(dismissView: .constant(false)))
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 //MARK:- RecipeModel:Codable
 struct RecipeModel : Codable, Identifiable {
     var id: Int
@@ -20,6 +21,23 @@ struct RecipeModel : Codable, Identifiable {
     var preparationMinutes:Int?
     var healthScore:Int?
     var sourceUrl:String?
+    
+}
+
+//MARK:- Extension RecipeModel make it from core data into valid struct
+extension RecipeModel{
+    init(managedRecipe: NSManagedObject){
+        self.id = managedRecipe.value(forKey: "id") as! Int
+        self.title = managedRecipe.value(forKey: "title") as! String
+        self.image = managedRecipe.value(forKey: "image") as? String
+        self.likes = managedRecipe.value(forKey: "likes") as? Int
+        self.vegetarian = managedRecipe.value(forKey: "vegetarian") as? Bool
+        self.glutenFree = managedRecipe.value(forKey: "glutenFree") as? Bool
+        self.cookingMinutes = managedRecipe.value(forKey: "cookingMinutes") as? Int
+        self.preparationMinutes = managedRecipe.value(forKey: "preparationMinutes") as? Int
+        self.healthScore = managedRecipe.value(forKey: "healthScore") as? Int
+        self.sourceUrl = managedRecipe.value(forKey: "sourceUrl") as? String
+        }
     
 }
 
@@ -138,7 +156,7 @@ struct RecipeModel : Codable, Identifiable {
 
 struct MockData {
     static let recipeSample = RecipeModel(id: 809320, title: "Balsamic Roast Beef French Dip Sandwich", image: "https://spoonacular.com/recipeImages/809320-312x231.jpg", likes: 562312, vegetarian: false, vegan: false, glutenFree: false, veryHealthy: false, cookingMinutes: 10, preparationMinutes: 0, healthScore: 12, sourceUrl: "http://addapinch.com/cooking/balsamic-roast-beef-french-dip-sandwich-recipe/")
-
+    
     static let recipeList  = [
         
         RecipeModel(id: 793712, title: "Easy Meat Lover’s Pizza", image:  "https://spoonacular.com/recipeImages/793712-312x231.jpg", likes: 96, vegetarian: false, vegan: false, glutenFree: false, veryHealthy: false, cookingMinutes: 10, preparationMinutes: 0, healthScore: 31, sourceUrl: "http://www.afamilyfeast.com/easy-meat-lovers-pizza/"),

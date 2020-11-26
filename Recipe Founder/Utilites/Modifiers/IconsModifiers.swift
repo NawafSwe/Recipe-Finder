@@ -10,18 +10,21 @@ struct IconsModifiers: ViewModifier{
     let scale:Image.Scale
     let width:CGFloat
     let height:CGFloat
+    let circleWidth:CGFloat
+    let circleHeight:CGFloat
+    let background:Color
+    
+    
     
     func body(content: Content) -> some View {
         content
-            //.label black in white mode and white in dark mode
-            .foregroundColor(Color(.systemBackground))
             .imageScale(scale)
             // 44 is a touch target
             .frame(width:height, height: width)
             .background(
                 Circle()
-                    .frame(width: 30, height: 50, alignment: .center)
-                    .accentColor(.iconsBackground)
+                    .frame(width: circleWidth, height: circleWidth, alignment: .center)
+                    .accentColor(background)
             )
     }
 }

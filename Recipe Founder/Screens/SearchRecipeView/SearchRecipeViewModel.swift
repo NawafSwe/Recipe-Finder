@@ -15,7 +15,14 @@ final class SearchRecipeViewModel: ObservableObject{
     @Published var showResults  = false
     @Published var alertItem:AlertItem? = nil
     @Published var isLoading  = false
+    var dismissView : Binding<Bool>
     var ingredientsStrings:[String] { ingredients.map {$0.name} }
+    
+    //MARK:- init for the viewModel binding
+    init (dismissView: Binding<Bool>){
+        self.dismissView = dismissView
+    }
+    
     
     func fetchRecipes(ingredients:[String] ) -> Void {
         DispatchQueue.main.async {
