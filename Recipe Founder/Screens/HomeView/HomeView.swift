@@ -40,6 +40,8 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .preferredColorScheme(.dark)
+            
     }
 }
 
@@ -56,7 +58,7 @@ struct TitleTextView : View {
                 .multilineTextAlignment(.center)
             
         }
-        .padding(.bottom,20)
+        .padding(.bottom,10)
         .padding(.leading)
     }
 }
