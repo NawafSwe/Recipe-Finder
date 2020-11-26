@@ -55,6 +55,7 @@
 		39F91AC72569B69600D297AA /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91AC62569B69600D297AA /* RecipeDetailsView.swift */; };
 		39F91ACC2569BE8900D297AA /* RecipeResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */; };
 		A112D07E257005620046C6CD /* girl-cooking@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A112D07C257005620046C6CD /* girl-cooking@1x.svg */; };
+		A112D082257005B50046C6CD /* cooking@1x.svg in Resources */ = {isa = PBXBuildFile; fileRef = A112D081257005B50046C6CD /* cooking@1x.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		39F91AC62569B69600D297AA /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		39F91ACB2569BE8900D297AA /* RecipeResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResultViewModel.swift; sourceTree = "<group>"; };
 		A112D07C257005620046C6CD /* girl-cooking@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "girl-cooking@1x.svg"; path = "../../../../../Downloads/girl-cooking@1x.svg"; sourceTree = "<group>"; };
+		A112D081257005B50046C6CD /* cooking@1x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "cooking@1x.svg"; path = "../../../../../Downloads/cooking@1x.svg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		393A1B55256D9C3A00A0C4EA /* vector-images */ = {
 			isa = PBXGroup;
 			children = (
+				A112D081257005B50046C6CD /* cooking@1x.svg */,
 				A112D07C257005620046C6CD /* girl-cooking@1x.svg */,
 			);
 			path = "vector-images";
@@ -484,6 +487,7 @@
 				393526DC256D78E90013D539 /* ipadSearch.json in Resources */,
 				A112D07E257005620046C6CD /* girl-cooking@1x.svg in Resources */,
 				393526DE256D78E90013D539 /* searchRecipe.json in Resources */,
+				A112D082257005B50046C6CD /* cooking@1x.svg in Resources */,
 				393526DD256D78E90013D539 /* mignifySearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
