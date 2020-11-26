@@ -36,7 +36,7 @@ struct RecipeResultsView: View {
             if(viewModel.showDetail){
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
-                RecipeDetailsView(recipe: viewModel.recipe!,dismiss: $viewModel.showDetail)
+                RecipeDetailsView(viewModel: RecipeDetailsViewModel(recipe: viewModel.recipe!,dismiss: $viewModel.showDetail))
                 
             }
             

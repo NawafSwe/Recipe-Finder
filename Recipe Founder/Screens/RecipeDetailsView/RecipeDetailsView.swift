@@ -7,27 +7,25 @@
 
 import SwiftUI
 struct RecipeDetailsView: View {
-    let recipe:RecipeModel
-    @Binding var dismiss:Bool
-    @StateObject private var viewModel = RecipeDetailsViewModel()
+    @ObservedObject  var viewModel : RecipeDetailsViewModel
     
     
     var body: some View {
         VStack{
-            RecipeImageView(url: recipe.image ?? "")
-//            Image("asian-flank-steak")
-//                .resizable()
+            RecipeImageView(url: viewModel.recipe.image ?? "")
+                //            Image("asian-flank-steak")
+                //                .resizable()
                 .frame(width: 360, height: 200)
                 .cornerRadius(40)
-                
+            
             VStack {
-                Text(recipe.title)
+                Text(viewModel.recipe.title)
                     .font(.title3)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding()
                 /// if null do not put it
-                Text("\(recipe.cookingMinutes ?? 0) min" )
+                Text("\(viewModel.recipe.cookingMinutes ?? 0) min" )
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
@@ -39,28 +37,29 @@ struct RecipeDetailsView: View {
                     VStack{
                         Text("Likes ❤️")
                             .font(.headline)
-                        Text("\(recipe.likes ?? 0)")
+                        Text("\(viewModel.recipe.likes ?? 0)")
                             .font(.callout)
                             .foregroundColor(.secondary)
                     }
                     VStack{
                         Text("health Score")
                             .font(.headline)
-                        Text("\(recipe.healthScore ?? 0)")
+                        Text("\(viewModel.recipe.healthScore ?? 0)")
                             .font(.callout)
                             .foregroundColor(.secondary)
-                    }.padding()
+                    }
+                    .padding()
                     
                 }
                 .font(.body)
                 .padding(20)
                 
                 HStack(spacing:32){
-                    RecipeDetailsBooleanView(title: "glutenFree 🫀", value: recipe.glutenFree ?? false)
+                    RecipeDetailsBooleanView(title: "glutenFree 🫀", value: viewModel.recipe.glutenFree ?? false)
                     
-                    RecipeDetailsBooleanView(title: "vegan ☘️", value: recipe.vegan ?? false)
+                    RecipeDetailsBooleanView(title: "vegan ☘️", value: viewModel.recipe.vegan ?? false)
                     
-                    RecipeDetailsBooleanView(title: "healthy 😇", value: recipe.veryHealthy ?? false)
+                    RecipeDetailsBooleanView(title: "healthy 😇", value: viewModel.recipe.veryHealthy ?? false)
                 }
                 .padding()
             }
@@ -76,8 +75,8 @@ struct RecipeDetailsView: View {
             .cornerRadius(20)
             .padding(.top,20)
             .sheet(isPresented: $viewModel.showSafari) {
-                SafariView(url: URL(string: recipe.sourceUrl ?? "") ??  URL(string:"Not found in case")! )
-                    
+                SafariView(url: URL(string: viewModel.recipe.sourceUrl ?? "") ??  URL(string:"Not found in case")! )
+                
             }
             
             
@@ -85,7 +84,7 @@ struct RecipeDetailsView: View {
         }
         
         .overlay(
-            Button(action:{self.dismiss.toggle()}){
+            Button(action:{self.viewModel.dismiss.wrappedValue.toggle()}){
                 DismissXmarkView(circleWidth: 25, circleHeight: 25)
                 
             }
@@ -93,7 +92,7 @@ struct RecipeDetailsView: View {
             .padding(.top,10)
             ,alignment: .topLeading)
         .overlay(
-            Button(action:{ viewModel.saveRecipe(recipe: recipe) }){
+            Button(action:{ viewModel.saveRecipe(recipe: viewModel.recipe) }){
                 SaveButtonView()
             }
             .alert(item: $viewModel.alertItem){ alert in
@@ -108,7 +107,7 @@ struct RecipeDetailsView: View {
 }
 struct RecipeDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailsView(recipe: MockData.recipeSample,dismiss: .constant(false))
+        RecipeDetailsView(viewModel: RecipeDetailsViewModel(recipe: MockData.recipeSample,dismiss: .constant(false)))
     }
 }
 

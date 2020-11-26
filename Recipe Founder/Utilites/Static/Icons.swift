@@ -18,4 +18,3 @@ enum Icons {
     static let  SFLeaf               = Image(systemName: "leaf")
     static let  SFSettings           = Image(systemName:"gear")
 }
-

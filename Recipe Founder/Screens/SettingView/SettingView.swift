@@ -23,12 +23,16 @@ struct SettingView: View {
                         AccountView(dismiss: $showAccountSetting)
                     }
                     
-                    Button{ showSafari.toggle()
-                    }label:{ SettingCellView(image: Icons.SFMessage, title: "Contact Developer",color: .text_color)
-                    }
-                    .sheet(isPresented: $showSafari){
-                        SafariView(url:URL(string:"https://twitter.com/Nawaf_B_910")!)
-                    }
+                    //                    Button{ showSafari.toggle()
+                    //                    }label:{ SettingCellView(image: Icons.SFMessage, title: "Contact Developer",color: .text_color)
+                    //                    }
+                    //                    .sheet(isPresented: $showSafari){
+                    //                        SafariView(url:Constants.devAccount)
+                    //                    }
+                    
+                    Link(destination: Constants.devAccount, label: {
+                        SettingCellView(image: Icons.SFMessage, title: "Contact Developer",color: .text_color)
+                    })
                 }
                 .accentColor(.black)
                 Section{
@@ -58,7 +62,7 @@ struct SettingCellView :View{
         HStack(spacing:10){
             image
                 .resizable()
-                .frame(width:28, height: 28)
+                .frame(width:22, height: 22)
                 .foregroundColor(color)
             
             Text(title)

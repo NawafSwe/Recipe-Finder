@@ -12,7 +12,7 @@ struct EmptySavedRecipesStateView:View {
     var body: some View{
         ZStack{
             VStack(spacing:10){
-                Image("shooping")
+                Image(Images.shopping)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 300 , height: 300)

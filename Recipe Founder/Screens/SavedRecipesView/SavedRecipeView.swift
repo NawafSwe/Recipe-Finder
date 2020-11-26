@@ -32,11 +32,11 @@ struct SavedRecipeView: View {
                     Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
                 }
                 
-     
+                
                 
                 .navigationBarTitle("Saved Recipes 🧾")
                 .navigationBarItems(leading: EditButton())
-       
+                
             }
             if recipes.count == 0{
                 EmptySavedRecipesStateView()
@@ -46,7 +46,7 @@ struct SavedRecipeView: View {
             if viewModel.showDetail{
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
-                RecipeDetailsView(recipe: viewModel.recipe ?? MockData.recipeSample, dismiss: $viewModel.showDetail)
+                RecipeDetailsView(viewModel: RecipeDetailsViewModel(recipe: viewModel.recipe ?? MockData.recipeSample, dismiss: $viewModel.showDetail))
             }
         }
     }
@@ -67,7 +67,7 @@ struct SavedRecipeView: View {
             
         }catch _ {
             DispatchQueue.main.async{viewModel.alertItem = AlertContext.unableToDelete}
-           
+            
         }
     }
 }

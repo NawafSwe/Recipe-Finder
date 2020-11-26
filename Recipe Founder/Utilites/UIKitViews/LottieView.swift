@@ -23,6 +23,8 @@ struct LottieView : UIViewRepresentable{
         
         /// setting the animation into the animation view
         animationView.animation = animation
+        /// make lottie loops till action finish
+        animationView.loopMode = .loop
         
         ///scaling the animation
         animationView.contentMode = .scaleAspectFit
@@ -47,23 +49,4 @@ struct LottieView : UIViewRepresentable{
         
     }
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) { }
-}
-
-struct SearchRecipeLottieView:View{
-    var body: some View{
-        VStack{
-        LottieView(fileName: "searchRecipe")
-        }
-        .frame(width: 300, height: 300, alignment: .center)
-        .background(BlurView(style: .systemMaterial))
-        .cornerRadius(25)
-        .shadow(radius: 5)
-    }
-}
-
-struct SearchRecipeLottieView_Previews: PreviewProvider{
-    static var previews: some View {
-        SearchRecipeLottieView()
-    }
-    
 }

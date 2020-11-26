@@ -14,6 +14,14 @@ final class RecipeDetailsViewModel:ObservableObject{
     @Published var showSafari = false
     @Published var alertItem:AlertItem? = nil
     private var core : DataStore = DataStore.shared
+    let recipe:RecipeModel
+     var dismiss:Binding<Bool>
+    
+     //MARK:- init viewModel
+    init(recipe:RecipeModel , dismiss:Binding<Bool>){
+        self.recipe = recipe
+        self.dismiss = dismiss
+    }
     
     var shared = DataStore.shared
     func saveRecipe(recipe: RecipeModel?){
