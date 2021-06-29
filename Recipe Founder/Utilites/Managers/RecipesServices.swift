@@ -11,7 +11,7 @@ import UIKit
 final class RecipeServices {
     static let sheared = RecipeServices()
     static let baseURL = Constants.API_HOST
-    static let endpoint = "spoon"
+    static let endpoint = "spoon/searchByIngredients"
     private let fullURL = baseURL+"/"+endpoint
     
     /// `caching pictures and getting images from spoon api`
