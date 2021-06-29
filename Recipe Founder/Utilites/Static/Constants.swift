@@ -11,7 +11,7 @@ import SwiftUI
 struct Constants {
     
     static let devAccount = URL(string:"https://twitter.com/Nawaf_B_910")!
-    static let API_HOST = "http://grocipe-app.herokuapp.com"
+    static let API_HOST = "https://grocipe-app.herokuapp.com"
     
     
     /// hide keyboard function
