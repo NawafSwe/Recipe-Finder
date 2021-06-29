@@ -10,9 +10,9 @@ import UIKit
 /// singleton design
 final class RecipeServices {
     static let sheared = RecipeServices()
-    static let baseURL = "https://spoon-groc.herokuapp.com/"
-    static let endpoint = "spoon/recipes"
-    private let fullURL = baseURL+endpoint
+    static let baseURL = Constants.API_HOST
+    static let endpoint = "spoon"
+    private let fullURL = baseURL+"/"+endpoint
     
     /// `caching pictures and getting images from spoon api`
     /// we are passing the each pair key `<NSString,UIImage>`
